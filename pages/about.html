@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Janmar Albis</title>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://janmaralbis.netlify.app/pages/about.html"/>
+  <meta property="og:title" content="About | Janmar Albis"/>
+  <meta property="og:description" content="IT Support Specialist and Systems Developer based in the Philippines. Building real solutions for real people."/>
+  <meta property="og:image" content="../assets/images/janmar_image.webp"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="About | Janmar Albis"/>
+  <meta name="twitter:description" content="IT Support Specialist and Systems Developer based in the Philippines. Building real solutions for real people."/>
+  <meta name="twitter:image" content="../assets/images/janmar_image.webp"/>
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top px-3 px-lg-5 py-3 transition-all">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+      <button class="navbar-toggler border-0 d-lg-none" id="mobileMenuBtn" type="button" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-2 text-current"></i>
+      </button>
+      <div class="d-none d-lg-flex gap-4 align-items-center nav-links">
+        <a href="../index.html" class="nav-link fw-semibold">Home</a>
+        <a href="about.html" class="nav-link active fw-semibold">About</a>
+        <a href="projects.html" class="nav-link fw-semibold">Projects</a>
+        <a href="articles.html" class="nav-link fw-semibold">Articles</a>
+      </div>
+      <div class="d-none d-lg-flex gap-3 align-items-center social-icons">
+        <a href="https://www.facebook.com/janmar.albis.2025" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://mail.google.com/mail/?view=cm&to=janmaralbis28@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Gmail"><i class="bi bi-envelope-fill"></i></a>
+        <button id="themeToggle" class="theme-btn ms-2" aria-label="Toggle theme"><i class="bi bi-sun-fill" id="themeIcon"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="mobileMenu" class="mobile-menu">
+    <button id="closeMenu" class="close-btn" aria-label="Close menu"><i class="bi bi-x-lg"></i></button>
+    <div class="mobile-nav-links">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="articles.html">Articles</a>
+    </div>
+    <div class="mobile-menu-footer">
+      <div class="mobile-social">
+        <a href="https://www.facebook.com/janmar.albis.2025" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://mail.google.com/mail/?view=cm&to=janmaralbis28@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Gmail"><i class="bi bi-envelope-fill"></i></a>
+        <button id="mobileThemeToggle" aria-label="Toggle theme" class="theme-btn">
+          <i class="bi bi-sun-fill" id="mobileThemeIcon"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="menuOverlay" class="menu-overlay"></div>
+
+  <div class="page-hero">
+    <p class="section-label mb-2">WHO I AM</p>
+    <h1 class="page-hero-title">
+      <span class="wave-letter" style="--i:0">A</span><span class="wave-letter" style="--i:1">B</span><span class="wave-letter" style="--i:2">O</span><span class="wave-letter" style="--i:3">U</span><span class="wave-letter" style="--i:4">T</span><span class="wave-letter" style="--i:5">&nbsp;</span><span class="wave-letter" style="--i:6">M</span><span class="wave-letter" style="--i:7">E</span>
+    </h1>
+    <p class="page-hero-sub">IT Support Specialist &amp; Systems Developer building real solutions for real people.</p>
+  </div>
+
+  <section class="py-5" style="background: var(--bg);">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+
+        <div class="col-12 col-lg-5 text-center">
+          <div class="about-portrait mx-auto position-relative" style="width:300px;height:360px;border-radius:16px;overflow:hidden;border:1px solid var(--border);">
+            <img src="../assets/images/janmar_image.webp" alt="Janmar Albis" class="about-slide active" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:1;transition:opacity 0.8s ease;"/>
+            <img src="../assets/images/Seated_image1.webp" alt="Janmar Albis" class="about-slide" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transition:opacity 0.8s ease;"/>
+            <img src="../assets/images/Seated_image2.webp" alt="Janmar Albis" class="about-slide" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transition:opacity 0.8s ease;"/>
+          </div>
+          <div class="avail-badge-about d-none d-lg-inline-flex mt-3">
+            <span class="avail-dot"></span>
+            <span id="availTypewriter"></span><span class="avail-cursor">|</span>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-7">
+          <p class="section-label mb-2">BIO</p>
+          <h2 class="section-title mb-3">I build systems that work.</h2>
+          <p style="color:var(--text-muted);line-height:1.8;font-size:0.95rem;">
+            Hi! I'm <strong style="color:var(--text);">Janmar Albis</strong>, an IT Support Specialist and Systems Developer based in Pasig City, Philippines. I have hands-on experience building Windows desktop applications for government and barangay offices, with particular expertise in VB.NET and SQL.
+          </p>
+          <p style="color:var(--text-muted);line-height:1.8;font-size:0.95rem;margin-top:1rem;">
+            I graduated with a Bachelor of Science in Information Technology from the University of Eastern Philippines (2020). Currently working as a Junior Developer at Polystar, Para&ntilde;aque &mdash; continuously expanding my skills into modern web development to build scalable, maintainable, and impactful systems.
+          </p>
+
+          <div class="skill-cards-grid mt-4">
+            <div class="skill-card" data-delay="0">
+              <div class="skill-card-icon"><i class="bi bi-window-desktop"></i></div>
+              <div class="skill-card-info">
+                <span class="skill-card-name">VB.NET / Windows Forms</span>
+                <span class="skill-card-level">Advanced</span>
+              </div>
+              <div class="skill-card-orb"></div>
+            </div>
+            <div class="skill-card" data-delay="80">
+              <div class="skill-card-icon"><i class="bi bi-database"></i></div>
+              <div class="skill-card-info">
+                <span class="skill-card-name">SQL / MySQL</span>
+                <span class="skill-card-level">Advanced</span>
+              </div>
+              <div class="skill-card-orb"></div>
+            </div>
+            <div class="skill-card" data-delay="160">
+              <div class="skill-card-icon"><i class="bi bi-headset"></i></div>
+              <div class="skill-card-info">
+                <span class="skill-card-name">IT Support</span>
+                <span class="skill-card-level">Expert</span>
+              </div>
+              <div class="skill-card-orb"></div>
+            </div>
+            <div class="skill-card" data-delay="240">
+              <div class="skill-card-icon"><i class="bi bi-code-slash"></i></div>
+              <div class="skill-card-info">
+                <span class="skill-card-name">HTML / CSS / JS</span>
+                <span class="skill-card-level">Intermediate</span>
+              </div>
+              <div class="skill-card-orb"></div>
+            </div>
+            <div class="skill-card" data-delay="320">
+              <div class="skill-card-icon"><i class="bi bi-file-earmark-bar-graph"></i></div>
+              <div class="skill-card-info">
+                <span class="skill-card-name">Crystal Reports</span>
+                <span class="skill-card-level">Proficient</span>
+              </div>
+              <div class="skill-card-orb"></div>
+            </div>
+            <div class="skill-card" data-delay="400">
+              <div class="skill-card-icon"><i class="bi bi-globe"></i></div>
+              <div class="skill-card-info">
+                <span class="skill-card-name">Node.js / ASP.NET</span>
+                <span class="skill-card-level">Intermediate</span>
+              </div>
+              <div class="skill-card-orb"></div>
+            </div>
+          </div>
+
+          <div class="d-flex gap-3 mt-4 flex-wrap">
+            <a href="https://mail.google.com/mail/?view=cm&to=janmaralbis28@gmail.com" target="_blank" class="btn btn-resume">Email Me <i class="bi bi-envelope ms-1"></i></a>
+            <a href="https://www.facebook.com/janmar.albis.2025" target="_blank" class="btn btn-contact">Facebook <i class="bi bi-facebook ms-1"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5" style="background: var(--bg-secondary);border-top:1px solid var(--border);">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+
+        <div class="col-12 col-lg-7">
+          <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);">
+            <iframe
+              src="https://maps.google.com/maps?q=12.5601209,124.3532417&z=14&output=embed"
+              width="100%" height="360" style="border:0;display:block;"
+              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              title="Lavezares, Northern Samar map">
+            </iframe>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-5">
+          <p class="section-label mb-2">LOCATION</p>
+          <h2 class="section-title mb-3">Based in the Philippines</h2>
+          <div class="d-flex flex-column gap-3">
+            <div class="d-flex align-items-start gap-3">
+              <div style="width:40px;height:40px;border-radius:50%;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <i class="bi bi-geo-alt" style="color:var(--text);"></i>
+              </div>
+              <div>
+                <p style="font-weight:700;font-size:0.875rem;color:var(--text);margin:0;">Current Address</p>
+                <p style="font-size:0.875rem;color:var(--text-muted);margin:0;">Lavezares, Northern Samar</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-start gap-3">
+              <div style="width:40px;height:40px;border-radius:50%;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <i class="bi bi-house" style="color:var(--text);"></i>
+              </div>
+              <div>
+                <p style="font-weight:700;font-size:0.875rem;color:var(--text);margin:0;">Hometown</p>
+                <p style="font-size:0.875rem;color:var(--text-muted);margin:0;">Lavezares, Northern Samar</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-start gap-3">
+              <div style="width:40px;height:40px;border-radius:50%;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <i class="bi bi-briefcase" style="color:var(--text);"></i>
+              </div>
+              <div>
+                <p style="font-weight:700;font-size:0.875rem;color:var(--text);margin:0;">Currently Working At</p>
+                <p style="font-size:0.875rem;color:var(--text-muted);margin:0;">Polystar, Para&ntilde;aque City</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-start gap-3">
+              <div style="width:40px;height:40px;border-radius:50%;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <i class="bi bi-globe" style="color:var(--text);"></i>
+              </div>
+              <div>
+                <p style="font-weight:700;font-size:0.875rem;color:var(--text);margin:0;">Open To</p>
+                <p style="font-size:0.875rem;color:var(--text-muted);margin:0;">Remote &amp; On-site opportunities in the Philippines</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer py-5">
+    <div class="container text-center">
+      <div class="footer-divider mb-4"></div>
+      <p class="footer-copy">2026 &copy; All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    const aboutSlides = document.querySelectorAll('.about-slide');
+    if (aboutSlides.length > 1) {
+      let current = 0;
+      setInterval(() => {
+        aboutSlides[current].style.opacity = '0';
+        current = (current + 1) % aboutSlides.length;
+        aboutSlides[current].style.opacity = '1';
+      }, 3000);
+    }
+
+    const skillCards = document.querySelectorAll('.skill-card');
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = parseInt(entry.target.dataset.delay) || 0;
+          setTimeout(() => entry.target.classList.add('visible'), delay);
+          cardObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    skillCards.forEach(card => cardObserver.observe(card));
+
+    const availEl = document.getElementById('availTypewriter');
+    if (availEl) {
+      const text = 'Open to Freelance Projects';
+      function availType() {
+        let i = 0;
+        availEl.textContent = '';
+        function forward() {
+          if (i < text.length) { availEl.textContent += text.charAt(i++); setTimeout(forward, 90); }
+          else { setTimeout(erase, 3500); }
+        }
+        function erase() {
+          if (availEl.textContent.length > 0) { availEl.textContent = availEl.textContent.slice(0, -1); setTimeout(erase, 45); }
+          else { setTimeout(availType, 600); }
+        }
+        forward();
+      }
+      setTimeout(availType, 800);
+    }
+  </script>
+</body>
+</html>

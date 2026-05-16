@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Janmar Albis | Full-Stack Developer</title>
+  <meta name="description" content="Janmar Albis — Full-Stack Developer specializing in VB.NET, SQL, Node.js, and modern web technologies. Open to freelance projects."/>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://janmaralbis.netlify.app/"/>
+  <meta property="og:title" content="Janmar Albis | Full-Stack Developer"/>
+  <meta property="og:description" content="Full-Stack Developer specializing in VB.NET, SQL, Node.js, and modern web technologies. Open to freelance projects."/>
+  <meta property="og:image" content="assets/images/hero_home_transparent_final.png"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Janmar Albis | Full-Stack Developer"/>
+  <meta name="twitter:description" content="Full-Stack Developer specializing in VB.NET, SQL, Node.js, and modern web technologies. Open to freelance projects."/>
+  <meta name="twitter:image" content="assets/images/hero_home_transparent_final.png"/>
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- ======================== NAVBAR ======================== -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top px-3 px-lg-5 py-3 transition-all">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <button class="navbar-toggler border-0 d-lg-none" id="mobileMenuBtn" type="button" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-2 text-current"></i>
+      </button>
+
+      <div class="d-none d-lg-flex gap-4 align-items-center nav-links">
+        <a href="index.html" class="nav-link active fw-semibold">Home</a>
+        <a href="pages/about.html" class="nav-link fw-semibold">About</a>
+        <a href="pages/projects.html" class="nav-link fw-semibold">Projects</a>
+        <a href="pages/articles.html" class="nav-link fw-semibold">Articles</a>
+      </div>
+
+      <div class="d-none d-lg-flex gap-3 align-items-center social-icons">
+        <a href="https://www.facebook.com/janmar.albis.2025" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://mail.google.com/mail/?view=cm&to=janmaralbis28@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Gmail"><i class="bi bi-envelope-fill"></i></a>
+        <button id="themeToggle" aria-label="Toggle theme" class="theme-btn ms-2">
+          <i class="bi bi-sun-fill" id="themeIcon"></i>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Mobile Slide Menu -->
+  <div id="mobileMenu" class="mobile-menu">
+    <button id="closeMenu" class="close-btn" aria-label="Close menu"><i class="bi bi-x-lg"></i></button>
+    <div class="mobile-nav-links">
+      <a href="index.html">Home</a>
+      <a href="pages/about.html">About</a>
+      <a href="pages/projects.html">Projects</a>
+      <a href="pages/articles.html">Articles</a>
+    </div>
+    <div class="mobile-menu-footer">
+      <div class="mobile-social">
+        <a href="https://www.facebook.com/janmar.albis.2025" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://mail.google.com/mail/?view=cm&to=janmaralbis28@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Gmail"><i class="bi bi-envelope-fill"></i></a>
+        <button id="mobileThemeToggle" aria-label="Toggle theme" class="theme-btn">
+          <i class="bi bi-sun-fill" id="mobileThemeIcon"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="menuOverlay" class="menu-overlay"></div>
+
+  <!-- ======================== HERO ======================== -->
+  <section id="hero" class="hero-section">
+    <div class="container-fluid h-100">
+      <div class="row h-100 align-items-center">
+
+        <div class="col-12 col-lg-6 hero-img-col d-flex justify-content-center align-items-center position-relative">
+          <div class="hero-portrait">
+            <div class="portrait-frame">
+              <img src="assets/images/hero_home_transparent_final.png" alt="Janmar Albis" class="hero-portrait-img"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6 hero-text-col text-center text-lg-start px-4 px-lg-5">
+          <p class="hero-intro">Hi, I'm <span class="hero-intro-name">&lt; <span id="heroTypewriter"></span><span class="logo-cursor"></span> /&gt;</span></p>
+          <h1 class="hero-title">Full-Stack Developer Bridging Systems Logic &amp; Modern Web.</h1>
+
+          <!-- Subtitle + Chicken walking track inside -->
+          <div class="hero-subtitle-wrap mt-3 mb-4">
+            <p class="hero-subtitle" id="heroSubtitle">
+              I am a Full-Stack Developer with a strong background in IT Support and Systems Development. I build
+              scalable web applications and enterprise systems using VB.NET, C#, ASP.NET, and Node.js, paired with modern
+              front-end tools like HTML, CSS, Bootstrap, and JavaScript. I prioritize clean code architecture and standard
+              directory layouts to ensure every project is secure, maintainable, and built to scale.
+            </p>
+            <!-- Sabong Chicken Walking Track -->
+            <div class="chicken-track" id="chickenTrack">
+              <div class="chicken-walker" id="chickenWalker">
+                <svg id="chickenSvg" width="72" height="80" viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg">
+                  <ellipse cx="50" cy="98" rx="24" ry="7" fill="rgba(255,140,0,0.18)"><animate attributeName="rx" values="24;30;24" dur="1.8s" repeatCount="indefinite"/></ellipse>
+                  <ellipse cx="78" cy="52" rx="14" ry="5" fill="#c0392b" transform="rotate(-30 78 52)"/>
+                  <ellipse cx="82" cy="47" rx="13" ry="4" fill="#e74c3c" transform="rotate(-48 82 47)"/>
+                  <ellipse cx="79" cy="57" rx="12" ry="4" fill="#922b21" transform="rotate(-14 79 57)"/>
+                  <ellipse cx="52" cy="65" rx="22" ry="18" fill="#c0392b"/>
+                  <ellipse cx="55" cy="63" rx="14" ry="9" fill="#e74c3c" transform="rotate(-10 55 63)"/>
+                  <ellipse cx="36" cy="48" rx="9" ry="13" fill="#c0392b"/>
+                  <circle cx="32" cy="34" r="12" fill="#c0392b"/>
+                  <ellipse cx="30" cy="22" rx="4" ry="6" fill="#e74c3c"/>
+                  <ellipse cx="35" cy="20" rx="3.5" ry="5" fill="#c0392b"/>
+                  <ellipse cx="26" cy="23" rx="3" ry="4.5" fill="#e74c3c"/>
+                  <ellipse cx="24" cy="40" rx="4" ry="6" fill="#e74c3c"/>
+                  <circle cx="26" cy="32" r="3.5" fill="#fff"/>
+                  <circle cx="25" cy="32" r="2" fill="#111"/>
+                  <circle cx="24.5" cy="31.5" r="0.7" fill="#fff"/>
+                  <polygon points="18,34 11,31 11,37" fill="#f39c12"/>
+                  <g id="chickenLegs">
+                    <g id="legLeft" style="transform-origin:44px 82px">
+                      <line x1="44" y1="82" x2="40" y2="96" stroke="#f39c12" stroke-width="3" stroke-linecap="round"/>
+                      <line x1="40" y1="96" x2="33" y2="103" stroke="#f39c12" stroke-width="2.5" stroke-linecap="round"/>
+                      <line x1="40" y1="96" x2="40" y2="104" stroke="#f39c12" stroke-width="2.5" stroke-linecap="round"/>
+                    </g>
+                    <g id="legRight" style="transform-origin:56px 82px">
+                      <line x1="56" y1="82" x2="60" y2="96" stroke="#f39c12" stroke-width="3" stroke-linecap="round"/>
+                      <line x1="60" y1="96" x2="53" y2="103" stroke="#f39c12" stroke-width="2.5" stroke-linecap="round"/>
+                      <line x1="60" y1="96" x2="67" y2="103" stroke="#f39c12" stroke-width="2.5" stroke-linecap="round"/>
+                    </g>
+                  </g>
+                  <g id="chickenKickLeg" opacity="0">
+                    <line x1="44" y1="82" x2="22" y2="68" stroke="#f39c12" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="22" y1="68" x2="8" y2="62" stroke="#f39c12" stroke-width="2.5" stroke-linecap="round"/>
+                    <line x1="22" y1="68" x2="16" y2="76" stroke="#f39c12" stroke-width="2.5" stroke-linecap="round"/>
+                    <line x1="14" y1="63" x2="4" y2="55" stroke="#e67e22" stroke-width="2" stroke-linecap="round"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-cta d-flex gap-3 justify-content-center justify-content-lg-start flex-wrap">
+            <button type="button" class="btn btn-resume" data-bs-toggle="modal" data-bs-target="#resumeModal">Resume <i class="bi bi-box-arrow-up-right ms-1"></i></button>
+            <a href="https://mail.google.com/mail/?view=cm&to=janmaralbis28@gmail.com" target="_blank" rel="noopener noreferrer" class="btn btn-contact">Contact</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ======================== SKILLS STRIP ======================== -->
+  <section class="skills-strip py-4">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <span class="skill-tag">VB.NET</span>
+        <span class="skill-tag">C#</span>
+        <span class="skill-tag">ASP.NET</span>
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">Bootstrap</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">IT Support</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FEATURED PROJECTS ======================== -->
+  <section class="projects-section py-5">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <p class="section-label">PORTFOLIO</p>
+        <h2 class="section-title">Featured Projects</h2>
+      </div>
+      <div class="row g-4 justify-content-center">
+
+        <div class="col-12 col-md-4">
+          <div class="project-card">
+            <div class="project-img-wrap">
+              <div class="project-img-placeholder" style="background: linear-gradient(135deg,#0f3460,#533483);">
+                <i class="bi bi-building fs-1 text-white opacity-50"></i>
+              </div>
+            </div>
+            <div class="project-info p-3">
+              <h5 class="project-name">Barangay Management System</h5>
+              <p class="project-desc">A management system for barangay operations &mdash; resident records, certificates, blotter, and official reporting tools.</p>
+              <div class="d-flex gap-2 flex-wrap mt-2">
+                <span class="tech-badge">VB.NET</span>
+                <span class="tech-badge">SQL</span>
+                <span class="tech-badge">Windows Forms</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="project-card">
+            <div class="project-img-wrap">
+              <div class="project-img-placeholder" style="background: linear-gradient(135deg,#4a1942,#c84b31);">
+                <i class="bi bi-person-vcard fs-1 text-white opacity-50"></i>
+              </div>
+            </div>
+            <div class="project-info p-3">
+              <h5 class="project-name">App Registry System V2</h5>
+              <p class="project-desc">A civil registry system for the Office of the Local Civil Registration &mdash; Lavezares, built for accurate and efficient record keeping.</p>
+              <div class="d-flex gap-2 flex-wrap mt-2">
+                <span class="tech-badge">VB.NET</span>
+                <span class="tech-badge">SQL</span>
+                <span class="tech-badge">Windows Forms</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="project-card">
+            <div class="project-img-wrap">
+              <div class="project-img-placeholder" style="background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);">
+                <i class="bi bi-people fs-1 text-white opacity-50"></i>
+              </div>
+            </div>
+            <div class="project-info p-3">
+              <h5 class="project-name">Manpower Portal &mdash; JGQ Company</h5>
+              <p class="project-desc">A full-stack web-based operations dashboard for managing clients, manpower, service proposals, inventory, and user approvals.</p>
+              <div class="d-flex gap-2 flex-wrap mt-2">
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Tailwind CSS</span>
+                <span class="tech-badge">SQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="text-center mt-5">
+        <a href="pages/projects.html" class="btn btn-outline">View All Projects <i class="bi bi-arrow-right ms-1"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== EXPERIENCE ======================== -->
+  <section class="articles-section py-5">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <p class="section-label">CAREER</p>
+        <h2 class="section-title">Work Experience</h2>
+      </div>
+
+      <div class="experience-timeline">
+
+        <div class="exp-item">
+          <div class="exp-dot"><i class="bi bi-tools"></i></div>
+          <div class="exp-content">
+            <span class="exp-date">June 2021 &ndash; August 2021</span>
+            <h5 class="exp-role">Field Engineer</h5>
+            <p class="exp-company">Automation Specialist &amp; Power Exponents, INC</p>
+            <ul class="exp-bullets">
+              <li>Troubleshot common hardware and software issues.</li>
+              <li>Maintained security and access control systems.</li>
+              <li>Handled network cabling and infrastructure setup.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-dot"><i class="bi bi-headset"></i></div>
+          <div class="exp-content">
+            <span class="exp-date">2022</span>
+            <h5 class="exp-role">IT Support Staff</h5>
+            <p class="exp-company">Civil Service Commission &amp; Dept. of Education &mdash; Regional Office No. VIII</p>
+            <ul class="exp-bullets">
+              <li>Assisted with software installation and updates.</li>
+              <li>Provided troubleshooting for printers, hardware, and software.</li>
+              <li>Supported staff with routine IT and system-related problems.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-dot"><i class="bi bi-pc-display"></i></div>
+          <div class="exp-content">
+            <span class="exp-date">2024 &ndash; 2025</span>
+            <h5 class="exp-role">Computer Operator</h5>
+            <p class="exp-company">Local Civil Registrar</p>
+            <ul class="exp-bullets">
+              <li>Developed a Windows desktop-based Civil Registrar System similar to PHILCRIS.</li>
+              <li>Managed records for Live Birth, Marriage, and Death Certificates.</li>
+              <li>Implemented data entry, search, reporting, and record management features.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-dot"><i class="bi bi-code-slash"></i></div>
+          <div class="exp-content">
+            <span class="exp-date">Project-Based / Freelance</span>
+            <h5 class="exp-role">IT Support &amp; Systems Developer</h5>
+            <p class="exp-company">Government &amp; Barangay Offices</p>
+            <ul class="exp-bullets">
+              <li>Created and maintained Windows-based applications for government and barangay use.</li>
+              <li>Handled application development, database maintenance, and system support.</li>
+              <li>Assisted offices in managing civil registry and administrative records.</li>
+              <li>Supported users and ensured proper system operation.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item exp-item--last">
+          <div class="exp-dot exp-dot--active"><i class="bi bi-laptop"></i></div>
+          <div class="exp-content exp-content--active">
+            <span class="exp-date">March 9, 2026 &ndash; Present &nbsp;<span class="exp-current-badge">Current</span></span>
+            <h5 class="exp-role">Junior Developer</h5>
+            <p class="exp-company">Polystar &mdash; Para&ntilde;aque</p>
+            <ul class="exp-bullets">
+              <li>Contributing to software development projects as a Junior Developer.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="site-footer py-5">
+    <div class="container text-center">
+      <div class="footer-divider mb-4"></div>
+      <p class="footer-copy">2026 &copy; All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ======================== RESUME MODAL ======================== -->
+  <div class="modal fade" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content resume-modal-content">
+
+        <div class="modal-header border-0 pb-0">
+          <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body text-center px-4 pb-4 pt-2">
+          <!-- Icon -->
+          <div class="resume-modal-icon mb-3">
+            <i class="bi bi-file-earmark-person-fill"></i>
+          </div>
+
+          <!-- Heading -->
+          <h5 class="resume-modal-title mb-1">Want a copy of my Resume?</h5>
+          <p class="resume-modal-subtitle mb-4">
+            My resume is available upon request. Reach out to me via email or Facebook Messenger and I'll send it right over!
+          </p>
+
+          <!-- Buttons -->
+          <div class="d-flex flex-column gap-3">
+            <a href="https://mail.google.com/mail/?view=cm&to=janmaralbis28@gmail.com&subject=Resume%20Request&body=Hi%20Janmar%2C%20I%27d%20like%20to%20request%20a%20copy%20of%20your%20resume."
+               target="_blank" rel="noopener noreferrer"
+               class="btn resume-modal-btn-email">
+              <i class="bi bi-envelope-fill me-2"></i>Email Me
+              <span class="resume-modal-hint">janmaralbis28@gmail.com</span>
+            </a>
+
+            <a href="https://www.facebook.com/janmar.albis.2025" target="_blank" rel="noopener noreferrer"
+               class="btn resume-modal-btn-fb">
+              <i class="bi bi-facebook me-2"></i>Message on Facebook
+              <span class="resume-modal-hint">facebook.com/janmar.albis.2025</span>
+            </a>
+          </div>
+
+          <p class="resume-modal-note mt-4 mb-0">
+            <i class="bi bi-shield-lock-fill me-1"></i>
+            I'll respond as soon as possible. Thank you for your interest!
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

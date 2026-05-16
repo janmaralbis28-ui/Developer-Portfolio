@@ -1,0 +1,18 @@
+# Dev tools — not part of the website
+optimize_images.py
+save_photo.py
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Original/unoptimized images
+assets/images/originals/
