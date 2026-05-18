@@ -116,6 +116,96 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  /* ---- Contact Form ---- */
+  const SERVICE_ID  = 'service_f9pxjun';
+  const TEMPLATE_ID = 'template_ifka6pi';
+  const PUBLIC_KEY  = 'ZV9IifKMEpsZRelNP';
+  emailjs.init({ publicKey: PUBLIC_KEY });
+
+  const contactModal = document.getElementById('contactModal');
+  if (contactModal) {
+    contactModal.addEventListener('hidden.bs.modal', () => {
+      ['contactName','contactEmail','contactSubject','contactMessage'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) { el.value = ''; el.classList.remove('is-invalid'); }
+      });
+      ['errName','errEmail','errSubject','errMessage'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = '';
+      });
+      document.getElementById('contactAlert')?.classList.add('d-none');
+      document.getElementById('contactFormWrap')?.classList.remove('d-none');
+      document.getElementById('contactSuccess')?.classList.add('d-none');
+      const btn = document.getElementById('contactSubmitBtn');
+      if (btn) btn.disabled = false;
+      document.getElementById('contactBtnText')?.classList.remove('d-none');
+      document.getElementById('contactBtnLoading')?.classList.add('d-none');
+    });
+  }
+
+  document.getElementById('contactSubmitBtn')?.addEventListener('click', async () => {
+    const nameEl    = document.getElementById('contactName');
+    const emailEl   = document.getElementById('contactEmail');
+    const subjectEl = document.getElementById('contactSubject');
+    const messageEl = document.getElementById('contactMessage');
+    const alertEl   = document.getElementById('contactAlert');
+
+    [nameEl, emailEl, subjectEl, messageEl].forEach(el => el.classList.remove('is-invalid'));
+    ['errName','errEmail','errSubject','errMessage'].forEach(id => {
+      document.getElementById(id).textContent = '';
+    });
+    alertEl.className = 'contact-alert d-none';
+
+    let valid = true;
+    if (!nameEl.value.trim()) {
+      nameEl.classList.add('is-invalid');
+      document.getElementById('errName').textContent = 'Name is required.';
+      valid = false;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailEl.value.trim() || !emailRegex.test(emailEl.value.trim())) {
+      emailEl.classList.add('is-invalid');
+      document.getElementById('errEmail').textContent = 'Enter a valid email address.';
+      valid = false;
+    }
+    if (!subjectEl.value.trim()) {
+      subjectEl.classList.add('is-invalid');
+      document.getElementById('errSubject').textContent = 'Subject is required.';
+      valid = false;
+    }
+    if (!messageEl.value.trim() || messageEl.value.trim().length < 10) {
+      messageEl.classList.add('is-invalid');
+      document.getElementById('errMessage').textContent = 'Message must be at least 10 characters.';
+      valid = false;
+    }
+    if (!valid) return;
+
+    const btn = document.getElementById('contactSubmitBtn');
+    btn.disabled = true;
+    document.getElementById('contactBtnText').classList.add('d-none');
+    document.getElementById('contactBtnLoading').classList.remove('d-none');
+
+    try {
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, {
+        from_name:  nameEl.value.trim(),
+        from_email: emailEl.value.trim(),
+        subject:    subjectEl.value.trim(),
+        message:    messageEl.value.trim(),
+        to_name:    'Janmar',
+      });
+      document.getElementById('contactFormWrap').classList.add('d-none');
+      document.getElementById('contactSuccess').classList.remove('d-none');
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      alertEl.className = 'contact-alert alert-danger';
+      alertEl.textContent = 'Something went wrong. Please try again or email me directly.';
+      alertEl.classList.remove('d-none');
+      btn.disabled = false;
+      document.getElementById('contactBtnText').classList.remove('d-none');
+      document.getElementById('contactBtnLoading').classList.add('d-none');
+    }
+  });
+
   /* ---- Scroll Fade In ---- */
   const fadeEls = document.querySelectorAll(
     '.project-card, .article-card, .skill-tag, .section-header'
