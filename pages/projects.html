@@ -41,21 +41,40 @@
 
   <nav id="navbar" class="navbar navbar-expand-lg fixed-top px-3 px-lg-5 py-3 transition-all">
     <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <!-- Hamburger (mobile only, left) -->
       <button class="navbar-toggler border-0 d-lg-none" id="mobileMenuBtn" type="button" aria-label="Toggle navigation">
         <i class="bi bi-list fs-2 text-current"></i>
       </button>
+
+      <!-- Logo (mobile only, centered) -->
+      <a href="../index.html" class="logo-code d-lg-none position-absolute start-50 translate-middle-x" style="text-decoration:none; color:inherit;">
+        <span class="logo-bracket">[</span>
+        <span class="logo-init">JA</span>
+        <span class="logo-bracket">]</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
       <div class="d-none d-lg-flex gap-4 align-items-center nav-links">
         <a href="../index.html" class="nav-link fw-semibold">Home</a>
         <a href="about.html" class="nav-link fw-semibold">About</a>
         <a href="projects.html" class="nav-link active fw-semibold">Projects</a>
         <a href="articles.html" class="nav-link fw-semibold">Articles</a>
       </div>
+
+      <!-- Social Icons + Theme Toggle (desktop only) -->
       <div class="d-none d-lg-flex gap-3 align-items-center social-icons">
         <a href="https://www.facebook.com/janmar.albis.2025" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
         <button type="button" class="social-icon-btn" data-bs-toggle="modal" data-bs-target="#contactModal" aria-label="Contact"><i class="bi bi-envelope-fill"></i></button>
         <a href="https://github.com/janmaralbis28-ui" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
-        <button id="themeToggle" class="theme-btn ms-2" aria-label="Toggle theme"><i class="bi bi-sun-fill" id="themeIcon"></i></button>
+        <button id="themeToggle" class="theme-btn ms-1" aria-label="Toggle theme"><i class="bi bi-sun-fill" id="themeIcon"></i></button>
       </div>
+
+      <!-- Theme Toggle (mobile only, right) -->
+      <button id="themeToggleMobileNav" aria-label="Toggle theme" class="theme-btn d-lg-none">
+        <i class="bi bi-sun-fill" id="themeIconMobileNav"></i>
+      </button>
+
     </div>
   </nav>
 
@@ -159,6 +178,54 @@
                 <span class="tech-badge">React</span>
                 <span class="tech-badge">Tailwind CSS</span>
                 <span class="tech-badge">SQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="project-card">
+            <div class="project-img-wrap">
+              <div class="project-img-placeholder" style="background: linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);">
+                <i class="bi bi-diagram-3 fs-1 text-white opacity-50"></i>
+              </div>
+            </div>
+            <div class="project-info p-3">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <span class="project-type-badge">Desktop App</span>
+                <span class="project-type-badge">Operations</span>
+              </div>
+              <h5 class="project-name">Manpower Distribution System</h5>
+              <p class="project-desc">A Windows desktop application for managing manpower distribution &mdash; handles client management, billing, payroll computation, and detailed reporting for field operations.</p>
+              <div class="d-flex gap-2 flex-wrap mt-2">
+                <span class="tech-badge">VB.NET</span>
+                <span class="tech-badge">SQL</span>
+                <span class="tech-badge">Windows Forms</span>
+                <span class="tech-badge">Crystal Reports</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="project-card">
+            <div class="project-img-wrap">
+              <div class="project-img-placeholder" style="background: linear-gradient(135deg,#134e4a,#065f46,#064e3b);">
+                <i class="bi bi-printer fs-1 text-white opacity-50"></i>
+              </div>
+            </div>
+            <div class="project-info p-3">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <span class="project-type-badge">Web App</span>
+                <span class="project-type-badge">Utility Tool</span>
+              </div>
+              <h5 class="project-name">Network Print Server</h5>
+              <p class="project-desc">A lightweight Node.js web server that exposes a local printer (Epson L3210) across a WiFi network. Any device on the same network can print via browser &mdash; no drivers needed.</p>
+              <div class="d-flex gap-2 flex-wrap mt-2">
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">Express</span>
+                <span class="tech-badge">HTML/CSS/JS</span>
+                <span class="tech-badge">REST API</span>
               </div>
             </div>
           </div>

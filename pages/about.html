@@ -41,21 +41,40 @@
 
   <nav id="navbar" class="navbar navbar-expand-lg fixed-top px-3 px-lg-5 py-3 transition-all">
     <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <!-- Hamburger (mobile only, left) -->
       <button class="navbar-toggler border-0 d-lg-none" id="mobileMenuBtn" type="button" aria-label="Toggle navigation">
         <i class="bi bi-list fs-2 text-current"></i>
       </button>
+
+      <!-- Logo (mobile only, centered) -->
+      <a href="../index.html" class="logo-code d-lg-none position-absolute start-50 translate-middle-x" style="text-decoration:none; color:inherit;">
+        <span class="logo-bracket">[</span>
+        <span class="logo-init">JA</span>
+        <span class="logo-bracket">]</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
       <div class="d-none d-lg-flex gap-4 align-items-center nav-links">
         <a href="../index.html" class="nav-link fw-semibold">Home</a>
         <a href="about.html" class="nav-link active fw-semibold">About</a>
         <a href="projects.html" class="nav-link fw-semibold">Projects</a>
         <a href="articles.html" class="nav-link fw-semibold">Articles</a>
       </div>
+
+      <!-- Social Icons + Theme Toggle (desktop only) -->
       <div class="d-none d-lg-flex gap-3 align-items-center social-icons">
         <a href="https://www.facebook.com/janmar.albis.2025" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
         <button type="button" class="social-icon-btn" data-bs-toggle="modal" data-bs-target="#contactModal" aria-label="Contact"><i class="bi bi-envelope-fill"></i></button>
         <a href="https://github.com/janmaralbis28-ui" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
-        <button id="themeToggle" class="theme-btn ms-2" aria-label="Toggle theme"><i class="bi bi-sun-fill" id="themeIcon"></i></button>
+        <button id="themeToggle" class="theme-btn ms-1" aria-label="Toggle theme"><i class="bi bi-sun-fill" id="themeIcon"></i></button>
       </div>
+
+      <!-- Theme Toggle (mobile only, right) -->
+      <button id="themeToggleMobileNav" aria-label="Toggle theme" class="theme-btn d-lg-none">
+        <i class="bi bi-sun-fill" id="themeIconMobileNav"></i>
+      </button>
+
     </div>
   </nav>
 

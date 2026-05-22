@@ -41,21 +41,40 @@
 
   <nav id="navbar" class="navbar navbar-expand-lg fixed-top px-3 px-lg-5 py-3 transition-all">
     <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <!-- Hamburger (mobile only, left) -->
       <button class="navbar-toggler border-0 d-lg-none" id="mobileMenuBtn" type="button" aria-label="Toggle navigation">
         <i class="bi bi-list fs-2 text-current"></i>
       </button>
+
+      <!-- Logo (mobile only, centered) -->
+      <a href="../index.html" class="logo-code d-lg-none position-absolute start-50 translate-middle-x" style="text-decoration:none; color:inherit;">
+        <span class="logo-bracket">[</span>
+        <span class="logo-init">JA</span>
+        <span class="logo-bracket">]</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
       <div class="d-none d-lg-flex gap-4 align-items-center nav-links">
         <a href="../index.html" class="nav-link fw-semibold">Home</a>
         <a href="about.html" class="nav-link fw-semibold">About</a>
         <a href="projects.html" class="nav-link fw-semibold">Projects</a>
         <a href="articles.html" class="nav-link active fw-semibold">Articles</a>
       </div>
+
+      <!-- Social Icons + Theme Toggle (desktop only) -->
       <div class="d-none d-lg-flex gap-3 align-items-center social-icons">
         <a href="https://www.facebook.com/janmar.albis.2025" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
         <button type="button" class="social-icon-btn" data-bs-toggle="modal" data-bs-target="#contactModal" aria-label="Contact"><i class="bi bi-envelope-fill"></i></button>
         <a href="https://github.com/janmaralbis28-ui" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
-        <button id="themeToggle" class="theme-btn ms-2" aria-label="Toggle theme"><i class="bi bi-sun-fill" id="themeIcon"></i></button>
+        <button id="themeToggle" class="theme-btn ms-1" aria-label="Toggle theme"><i class="bi bi-sun-fill" id="themeIcon"></i></button>
       </div>
+
+      <!-- Theme Toggle (mobile only, right) -->
+      <button id="themeToggleMobileNav" aria-label="Toggle theme" class="theme-btn d-lg-none">
+        <i class="bi bi-sun-fill" id="themeIconMobileNav"></i>
+      </button>
+
     </div>
   </nav>
 
@@ -160,6 +179,30 @@
             </div>
             <h5 class="article-title">Desktop to Web: Transitioning from VB.NET to Node.js and React</h5>
             <p class="article-excerpt">What it's really like switching from Windows Forms development to modern web stack — the mindset shifts, the familiar concepts, and the parts that will genuinely surprise you.</p>
+            <span class="coming-soon-link mt-3"><i class="bi bi-clock me-1"></i>Coming Soon</span>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="article-card p-4">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="article-date">May 2026</span>
+              <span class="tech-badge">VB.NET</span>
+            </div>
+            <h5 class="article-title">Building a Manpower Distribution System: Billing, Payroll &amp; Crystal Reports</h5>
+            <p class="article-excerpt">A behind-the-scenes look at how I built a full manpower distribution desktop app — from designing the client and billing module to generating payroll reports using Crystal Reports in VB.NET.</p>
+            <span class="coming-soon-link mt-3"><i class="bi bi-clock me-1"></i>Coming Soon</span>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="article-card p-4">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="article-date">May 2026</span>
+              <span class="tech-badge">Node.js</span>
+            </div>
+            <h5 class="article-title">How I Built a WiFi Print Server with Node.js (No Drivers Needed)</h5>
+            <p class="article-excerpt">I needed any device on a WiFi network to print without installing drivers. Here's how I built a lightweight Node.js + Express print server with a browser-based UI that just works — including REST API, job queue, and SumatraPDF integration.</p>
             <span class="coming-soon-link mt-3"><i class="bi bi-clock me-1"></i>Coming Soon</span>
           </div>
         </div>

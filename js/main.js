@@ -2,6 +2,12 @@
 //  CB PORTFOLIO — main.js
 // ============================================================
 
+// Always scroll to top on page load/refresh
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ---- Hero Typewriter ---- */
@@ -39,11 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---- Theme Toggle ---- */
-  const html               = document.documentElement;
-  const themeToggle        = document.getElementById('themeToggle');
-  const themeIcon          = document.getElementById('themeIcon');
-  const mobileThemeToggle  = document.getElementById('mobileThemeToggle');
-  const mobileThemeIcon    = document.getElementById('mobileThemeIcon');
+  const html                = document.documentElement;
+  const themeToggle         = document.getElementById('themeToggle');
+  const themeIcon           = document.getElementById('themeIcon');
+  const mobileThemeToggle   = document.getElementById('mobileThemeToggle');
+  const mobileThemeIcon     = document.getElementById('mobileThemeIcon');
+  const mobileNavToggle     = document.getElementById('themeToggleMobileNav');
+  const mobileNavIcon       = document.getElementById('themeIconMobileNav');
 
   const savedTheme = localStorage.getItem('cb-theme') || 'dark';
   html.setAttribute('data-theme', savedTheme);
@@ -51,8 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateThemeIcon(theme) {
     const cls = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
-    if (themeIcon)       themeIcon.className = cls;
+    if (themeIcon)      themeIcon.className = cls;
     if (mobileThemeIcon) mobileThemeIcon.className = cls;
+    if (mobileNavIcon)  mobileNavIcon.className = cls;
   }
 
   function toggleTheme() {
@@ -65,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (themeToggle)       themeToggle.addEventListener('click', toggleTheme);
   if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+  if (mobileNavToggle)   mobileNavToggle.addEventListener('click', toggleTheme);
 
   /* ---- Navbar Scroll ---- */
   const navbar = document.getElementById('navbar');

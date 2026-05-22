@@ -51,10 +51,19 @@
   <nav id="navbar" class="navbar navbar-expand-lg fixed-top px-3 px-lg-5 py-3 transition-all">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
+      <!-- Hamburger (mobile only, left) -->
       <button class="navbar-toggler border-0 d-lg-none" id="mobileMenuBtn" type="button" aria-label="Toggle navigation">
         <i class="bi bi-list fs-2 text-current"></i>
       </button>
 
+      <!-- Logo (mobile only, centered via absolute) -->
+      <a href="index.html" class="logo-code d-lg-none position-absolute start-50 translate-middle-x" style="text-decoration:none; color:inherit;">
+        <span class="logo-bracket">[</span>
+        <span class="logo-init">JA</span>
+        <span class="logo-bracket">]</span>
+      </a>
+
+      <!-- Desktop Nav Links (left side on desktop) -->
       <div class="d-none d-lg-flex gap-4 align-items-center nav-links">
         <a href="index.html" class="nav-link active fw-semibold">Home</a>
         <a href="pages/about.html" class="nav-link fw-semibold">About</a>
@@ -62,14 +71,20 @@
         <a href="pages/articles.html" class="nav-link fw-semibold">Articles</a>
       </div>
 
+      <!-- Social Icons + Theme Toggle (desktop only, right side) -->
       <div class="d-none d-lg-flex gap-3 align-items-center social-icons">
         <a href="https://www.facebook.com/janmar.albis.2025" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
         <button type="button" class="social-icon-btn" data-bs-toggle="modal" data-bs-target="#contactModal" aria-label="Contact"><i class="bi bi-envelope-fill"></i></button>
         <a href="https://github.com/janmaralbis28-ui" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
-        <button id="themeToggle" aria-label="Toggle theme" class="theme-btn ms-2">
+        <button id="themeToggle" aria-label="Toggle theme" class="theme-btn ms-1">
           <i class="bi bi-sun-fill" id="themeIcon"></i>
         </button>
       </div>
+
+      <!-- Theme Toggle (mobile only, right side) -->
+      <button id="themeToggleMobileNav" aria-label="Toggle theme" class="theme-btn d-lg-none">
+        <i class="bi bi-sun-fill" id="themeIconMobileNav"></i>
+      </button>
 
     </div>
   </nav>
@@ -218,6 +233,46 @@
           </div>
         </div>
 
+        <div class="col-12 col-md-4">
+          <div class="project-card">
+            <div class="project-img-wrap">
+              <div class="project-img-placeholder" style="background: linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);">
+                <i class="bi bi-diagram-3 fs-1 text-white opacity-50"></i>
+              </div>
+            </div>
+            <div class="project-info p-3">
+              <h5 class="project-name">Manpower Distribution System</h5>
+              <p class="project-desc">A Windows desktop app for managing manpower distribution &mdash; client management, billing, payroll computation, and detailed reporting for field operations.</p>
+              <div class="d-flex gap-2 flex-wrap mt-2">
+                <span class="tech-badge">VB.NET</span>
+                <span class="tech-badge">SQL</span>
+                <span class="tech-badge">Windows Forms</span>
+                <span class="tech-badge">Crystal Reports</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="project-card">
+            <div class="project-img-wrap">
+              <div class="project-img-placeholder" style="background: linear-gradient(135deg,#134e4a,#065f46,#064e3b);">
+                <i class="bi bi-printer fs-1 text-white opacity-50"></i>
+              </div>
+            </div>
+            <div class="project-info p-3">
+              <h5 class="project-name">Network Print Server</h5>
+              <p class="project-desc">A lightweight Node.js web server that shares a local printer across a WiFi network. Any device on the same network can print via browser &mdash; no drivers needed.</p>
+              <div class="d-flex gap-2 flex-wrap mt-2">
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">Express</span>
+                <span class="tech-badge">HTML/CSS/JS</span>
+                <span class="tech-badge">REST API</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
       <div class="text-center mt-5">
         <a href="pages/projects.html" class="btn btn-outline">View All Projects <i class="bi bi-arrow-right ms-1"></i></a>
@@ -236,43 +291,13 @@
       <div class="experience-timeline">
 
         <div class="exp-item">
-          <div class="exp-dot"><i class="bi bi-tools"></i></div>
-          <div class="exp-content">
-            <span class="exp-date">June 2021 &ndash; August 2021</span>
-            <h5 class="exp-role">Field Engineer</h5>
-            <p class="exp-company">Automation Specialist &amp; Power Exponents, INC</p>
+          <div class="exp-dot exp-dot--active"><i class="bi bi-laptop"></i></div>
+          <div class="exp-content exp-content--active">
+            <span class="exp-date">March 9, 2026 &ndash; Present &nbsp;<span class="exp-current-badge">Current</span></span>
+            <h5 class="exp-role">Junior Developer</h5>
+            <p class="exp-company">Polystar &mdash; Para&ntilde;aque</p>
             <ul class="exp-bullets">
-              <li>Troubleshot common hardware and software issues.</li>
-              <li>Maintained security and access control systems.</li>
-              <li>Handled network cabling and infrastructure setup.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="exp-item">
-          <div class="exp-dot"><i class="bi bi-headset"></i></div>
-          <div class="exp-content">
-            <span class="exp-date">2022</span>
-            <h5 class="exp-role">IT Support Staff</h5>
-            <p class="exp-company">Civil Service Commission &amp; Dept. of Education &mdash; Regional Office No. VIII</p>
-            <ul class="exp-bullets">
-              <li>Assisted with software installation and updates.</li>
-              <li>Provided troubleshooting for printers, hardware, and software.</li>
-              <li>Supported staff with routine IT and system-related problems.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="exp-item">
-          <div class="exp-dot"><i class="bi bi-pc-display"></i></div>
-          <div class="exp-content">
-            <span class="exp-date">2024 &ndash; 2025</span>
-            <h5 class="exp-role">Computer Operator</h5>
-            <p class="exp-company">Local Civil Registrar</p>
-            <ul class="exp-bullets">
-              <li>Developed a Windows desktop-based Civil Registrar System similar to PHILCRIS.</li>
-              <li>Managed records for Live Birth, Marriage, and Death Certificates.</li>
-              <li>Implemented data entry, search, reporting, and record management features.</li>
+              <li>Contributing to software development projects as a Junior Developer.</li>
             </ul>
           </div>
         </div>
@@ -292,14 +317,44 @@
           </div>
         </div>
 
-        <div class="exp-item exp-item--last">
-          <div class="exp-dot exp-dot--active"><i class="bi bi-laptop"></i></div>
-          <div class="exp-content exp-content--active">
-            <span class="exp-date">March 9, 2026 &ndash; Present &nbsp;<span class="exp-current-badge">Current</span></span>
-            <h5 class="exp-role">Junior Developer</h5>
-            <p class="exp-company">Polystar &mdash; Para&ntilde;aque</p>
+        <div class="exp-item">
+          <div class="exp-dot"><i class="bi bi-pc-display"></i></div>
+          <div class="exp-content">
+            <span class="exp-date">2024 &ndash; 2025</span>
+            <h5 class="exp-role">Computer Operator</h5>
+            <p class="exp-company">Local Civil Registrar</p>
             <ul class="exp-bullets">
-              <li>Contributing to software development projects as a Junior Developer.</li>
+              <li>Developed a Windows desktop-based Civil Registrar System similar to PHILCRIS.</li>
+              <li>Managed records for Live Birth, Marriage, and Death Certificates.</li>
+              <li>Implemented data entry, search, reporting, and record management features.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-dot"><i class="bi bi-headset"></i></div>
+          <div class="exp-content">
+            <span class="exp-date">2022</span>
+            <h5 class="exp-role">IT Support Staff</h5>
+            <p class="exp-company">Civil Service Commission &amp; Dept. of Education &mdash; Regional Office No. VIII</p>
+            <ul class="exp-bullets">
+              <li>Assisted with software installation and updates.</li>
+              <li>Provided troubleshooting for printers, hardware, and software.</li>
+              <li>Supported staff with routine IT and system-related problems.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item exp-item--last">
+          <div class="exp-dot"><i class="bi bi-tools"></i></div>
+          <div class="exp-content">
+            <span class="exp-date">June 2021 &ndash; August 2021</span>
+            <h5 class="exp-role">Field Engineer</h5>
+            <p class="exp-company">Automation Specialist &amp; Power Exponents, INC</p>
+            <ul class="exp-bullets">
+              <li>Troubleshot common hardware and software issues.</li>
+              <li>Maintained security and access control systems.</li>
+              <li>Handled network cabling and infrastructure setup.</li>
             </ul>
           </div>
         </div>

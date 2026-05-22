@@ -781,6 +781,22 @@ a { text-decoration: none; color: inherit; }
    RESPONSIVE — Mobile First
    ============================================================ */
 
+/* Navbar social icons — reduce size & gap on small screens */
+@media (max-width: 991.98px) {
+  .social-icons {
+    gap: 0.6rem !important;
+  }
+  .social-icons a,
+  .social-icon-btn {
+    font-size: 0.95rem;
+  }
+  .theme-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+}
+
 /* Small phones (< 480px) */
 @media (max-width: 479px) {
   .hero-portrait { width: 78vw; }
