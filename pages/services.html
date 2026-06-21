@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services | Janmar Albis</title>
+  <meta name="description" content="Freelance IT remote support, computer parts sourcing &amp; PC builds, and a straight guide to buying genuine Windows &amp; Office licenses — by Janmar Albis."/>
+  <meta name="keywords" content="Janmar Albis, IT Support Services, Remote IT Support Philippines, Computer Parts, PC Build, Genuine Software, Windows License, Office License"/>
+  <meta name="author" content="Janmar Albis"/>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg"/>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://janmaralbis.netlify.app/pages/services.html"/>
+  <meta property="og:title" content="Services | Janmar Albis"/>
+  <meta property="og:description" content="Freelance IT remote support, computer parts sourcing &amp; PC builds, and a straight guide to buying genuine Windows &amp; Office licenses."/>
+  <meta property="og:image" content="../assets/images/hero_home_transparent_final.png"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Services | Janmar Albis"/>
+  <meta name="twitter:description" content="Freelance IT remote support, computer parts sourcing &amp; PC builds, and a straight guide to buying genuine Windows &amp; Office licenses."/>
+  <meta name="twitter:image" content="../assets/images/hero_home_transparent_final.png"/>
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J659DX77W7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J659DX77W7');
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top px-3 px-lg-5 py-3 transition-all">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <!-- Hamburger (mobile only, left) -->
+      <button class="navbar-toggler border-0 d-lg-none" id="mobileMenuBtn" type="button" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-2 text-current"></i>
+      </button>
+
+      <!-- Logo (mobile only, centered) -->
+      <a href="../index.html" class="logo-code d-lg-none position-absolute start-50 translate-middle-x" style="text-decoration:none; color:inherit;">
+        <span class="logo-bracket">[</span>
+        <span class="logo-init">JA</span>
+        <span class="logo-bracket">]</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <div class="d-none d-lg-flex gap-4 align-items-center nav-links">
+        <a href="../index.html" class="nav-link fw-semibold">Home</a>
+        <a href="about.html" class="nav-link fw-semibold">About</a>
+        <a href="projects.html" class="nav-link fw-semibold">Projects</a>
+        <a href="services.html" class="nav-link active fw-semibold">Services</a>
+        <a href="articles.html" class="nav-link fw-semibold">Articles</a>
+      </div>
+
+      <!-- Social Icons + Theme Toggle (desktop only) -->
+      <div class="d-none d-lg-flex gap-3 align-items-center social-icons">
+        <a href="https://www.facebook.com/janmar.albis.2025" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <button type="button" class="social-icon-btn" data-bs-toggle="modal" data-bs-target="#contactModal" aria-label="Contact"><i class="bi bi-envelope-fill"></i></button>
+        <a href="https://github.com/janmaralbis28-ui" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        <button id="themeToggle" class="theme-btn ms-1" aria-label="Toggle theme"><i class="bi bi-sun-fill" id="themeIcon"></i></button>
+      </div>
+
+      <!-- Theme Toggle (mobile only, right) -->
+      <button id="themeToggleMobileNav" aria-label="Toggle theme" class="theme-btn d-lg-none">
+        <i class="bi bi-sun-fill" id="themeIconMobileNav"></i>
+      </button>
+
+    </div>
+  </nav>
+
+  <div id="mobileMenu" class="mobile-menu">
+    <button id="closeMenu" class="close-btn" aria-label="Close menu"><i class="bi bi-x-lg"></i></button>
+    <div class="mobile-nav-links">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="services.html">Services</a>
+      <a href="articles.html">Articles</a>
+    </div>
+    <div class="mobile-menu-footer">
+      <div class="mobile-social">
+        <a href="https://www.facebook.com/janmar.albis.2025" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <button type="button" class="social-icon-btn" data-bs-toggle="modal" data-bs-target="#contactModal" aria-label="Contact"><i class="bi bi-envelope-fill"></i></button>
+        <a href="https://github.com/janmaralbis28-ui" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        <button id="mobileThemeToggle" aria-label="Toggle theme" class="theme-btn">
+          <i class="bi bi-sun-fill" id="mobileThemeIcon"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="menuOverlay" class="menu-overlay"></div>
+
+  <div class="page-hero">
+    <p class="section-label mb-2">WAYS I CAN HELP</p>
+    <h1 class="page-hero-title">
+      <span class="wave-letter" style="--i:0">S</span><span class="wave-letter" style="--i:1">E</span><span class="wave-letter" style="--i:2">R</span><span class="wave-letter" style="--i:3">V</span><span class="wave-letter" style="--i:4">I</span><span class="wave-letter" style="--i:5">C</span><span class="wave-letter" style="--i:6">E</span><span class="wave-letter" style="--i:7">S</span>
+    </h1>
+    <p class="page-hero-sub">Beyond code &mdash; remote IT support, computer parts &amp; builds, and a straight guide to buying your software the legit way.</p>
+  </div>
+
+  <!-- ======================== SERVICE CARDS ======================== -->
+  <section class="py-5" style="background: var(--bg);">
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+
+        <!-- Card 1: Remote IT Support -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-headset"></i></div>
+            <h5 class="service-title">Freelance IT Remote Support</h5>
+            <p class="service-desc">Computer acting up? Most issues get sorted through a remote session &mdash; no need to bring it anywhere. Available for clients anywhere in the Philippines.</p>
+            <ul class="service-list">
+              <li><i class="bi bi-check2"></i>Virus &amp; malware removal</li>
+              <li><i class="bi bi-check2"></i>Slow PC / freezing &amp; crash fixes</li>
+              <li><i class="bi bi-check2"></i>OS reinstall &amp; driver setup</li>
+              <li><i class="bi bi-check2"></i>Printer &amp; home/office network setup</li>
+              <li><i class="bi bi-check2"></i>Software installation &amp; troubleshooting</li>
+              <li><i class="bi bi-check2"></i>File backup &amp; basic data recovery</li>
+            </ul>
+            <button type="button" class="btn btn-resume w-100" data-bs-toggle="modal" data-bs-target="#contactModal">Book a Session <i class="bi bi-arrow-right ms-1"></i></button>
+          </div>
+        </div>
+
+        <!-- Card 2: Computer Parts & Builds -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-cpu"></i></div>
+            <h5 class="service-title">Computer Parts &amp; PC Builds</h5>
+            <p class="service-desc">Need a new build or an upgrade? I source genuine parts from trusted local suppliers, and put together the right specs for your budget and use case.</p>
+            <div class="d-flex gap-2 flex-wrap mb-3">
+              <span class="tech-badge">AMD</span>
+              <span class="tech-badge">Intel</span>
+              <span class="tech-badge">NVIDIA</span>
+              <span class="tech-badge">ASUS</span>
+            </div>
+            <ul class="service-list">
+              <li><i class="bi bi-check2"></i>Custom PC build consultation</li>
+              <li><i class="bi bi-check2"></i>Parts sourcing &mdash; CPU, GPU, RAM, storage</li>
+              <li><i class="bi bi-check2"></i>Upgrade recommendations</li>
+              <li><i class="bi bi-check2"></i>Compatibility checking</li>
+              <li><i class="bi bi-check2"></i>Assembly &amp; testing</li>
+              <li><i class="bi bi-check2"></i>Gaming, office, or business builds</li>
+            </ul>
+            <button type="button" class="btn btn-resume w-100" data-bs-toggle="modal" data-bs-target="#contactModal">Get a Quote <i class="bi bi-arrow-right ms-1"></i></button>
+          </div>
+        </div>
+
+        <!-- Card 3: Genuine Software Purchase Guide -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-shield-check"></i></div>
+            <h5 class="service-title">Genuine Software Purchase Guide</h5>
+            <p class="service-desc">Need Windows or Office? I'll walk you through buying a genuine license from official Microsoft channels &mdash; the right edition, the right price, fully activated and supported.</p>
+            <div class="service-note">
+              <i class="bi bi-info-circle"></i>
+              <span>I don't sell or distribute product keys myself. I only guide you to official, policy-compliant purchase sources.</span>
+            </div>
+            <ul class="service-list">
+              <li><i class="bi bi-check2"></i>Choosing the right edition (Home, Pro, Education)</li>
+              <li><i class="bi bi-check2"></i>Step-by-step official purchase walkthrough</li>
+              <li><i class="bi bi-check2"></i>Activation &amp; setup assistance</li>
+              <li><i class="bi bi-check2"></i>How to spot invalid / gray-market keys</li>
+            </ul>
+            <button type="button" class="btn btn-resume w-100" data-bs-toggle="modal" data-bs-target="#contactModal">Ask Me How <i class="bi bi-arrow-right ms-1"></i></button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== 3D PARTS SHOWCASE ======================== -->
+  <section class="py-5 parts-showcase-section" style="background: var(--bg-secondary); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <p class="section-label">HARDWARE</p>
+        <h2 class="section-title">Parts I Work With</h2>
+        <p style="color:var(--text-muted); max-width:560px; margin:0.75rem auto 0; line-height:1.7;">Hover (or tilt your phone) to see each part in 3D &mdash; these are the core components I source and configure for every build.</p>
+      </div>
+
+      <div class="row g-3 g-md-4 justify-content-center">
+
+        <!-- AMD -->
+        <div class="col-6 col-md-3 col-lg-3">
+          <div class="part-card-3d">
+            <div class="part-card-3d-inner">
+              <div class="part-card-glare"></div>
+              <div class="part-card-icon">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="16" y="16" width="32" height="32" rx="2"></rect>
+                  <rect x="25" y="25" width="14" height="14" rx="1"></rect>
+                  <line x1="22" y1="8" x2="22" y2="16"></line>
+                  <line x1="32" y1="8" x2="32" y2="16"></line>
+                  <line x1="42" y1="8" x2="42" y2="16"></line>
+                  <line x1="22" y1="48" x2="22" y2="56"></line>
+                  <line x1="32" y1="48" x2="32" y2="56"></line>
+                  <line x1="42" y1="48" x2="42" y2="56"></line>
+                  <line x1="8" y1="22" x2="16" y2="22"></line>
+                  <line x1="8" y1="32" x2="16" y2="32"></line>
+                  <line x1="8" y1="42" x2="16" y2="42"></line>
+                  <line x1="48" y1="22" x2="56" y2="22"></line>
+                  <line x1="48" y1="32" x2="56" y2="32"></line>
+                  <line x1="48" y1="42" x2="56" y2="42"></line>
+                </svg>
+              </div>
+              <p class="part-card-name">AMD</p>
+              <p class="part-card-tag">Ryzen Builds</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Intel -->
+        <div class="col-6 col-md-3 col-lg-3">
+          <div class="part-card-3d">
+            <div class="part-card-3d-inner">
+              <div class="part-card-glare"></div>
+              <div class="part-card-icon">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="16" y="16" width="32" height="32" rx="2"></rect>
+                  <rect x="25" y="25" width="14" height="14" rx="1"></rect>
+                  <line x1="22" y1="8" x2="22" y2="16"></line>
+                  <line x1="32" y1="8" x2="32" y2="16"></line>
+                  <line x1="42" y1="8" x2="42" y2="16"></line>
+                  <line x1="22" y1="48" x2="22" y2="56"></line>
+                  <line x1="32" y1="48" x2="32" y2="56"></line>
+                  <line x1="42" y1="48" x2="42" y2="56"></line>
+                  <line x1="8" y1="22" x2="16" y2="22"></line>
+                  <line x1="8" y1="32" x2="16" y2="32"></line>
+                  <line x1="8" y1="42" x2="16" y2="42"></line>
+                  <line x1="48" y1="22" x2="56" y2="22"></line>
+                  <line x1="48" y1="32" x2="56" y2="32"></line>
+                  <line x1="48" y1="42" x2="56" y2="42"></line>
+                </svg>
+              </div>
+              <p class="part-card-name">Intel</p>
+              <p class="part-card-tag">Core Builds</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SSD -->
+        <div class="col-6 col-md-3 col-lg-3">
+          <div class="part-card-3d">
+            <div class="part-card-3d-inner">
+              <div class="part-card-glare"></div>
+              <div class="part-card-icon">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="20" width="46" height="24" rx="4"></rect>
+                  <line x1="16" y1="28" x2="30" y2="28"></line>
+                  <line x1="16" y1="35" x2="24" y2="35"></line>
+                  <circle cx="45" cy="32" r="5"></circle>
+                </svg>
+              </div>
+              <p class="part-card-name">SSD</p>
+              <p class="part-card-tag">Fast Storage</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- HDD -->
+        <div class="col-6 col-md-3 col-lg-3">
+          <div class="part-card-3d">
+            <div class="part-card-3d-inner">
+              <div class="part-card-glare"></div>
+              <div class="part-card-icon">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="13" width="46" height="38" rx="4"></rect>
+                  <circle cx="32" cy="32" r="13"></circle>
+                  <circle cx="32" cy="32" r="3" fill="currentColor" stroke="none"></circle>
+                  <line x1="32" y1="19" x2="44" y2="13"></line>
+                </svg>
+              </div>
+              <p class="part-card-name">HDD</p>
+              <p class="part-card-tag">Bulk Storage</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- System Unit / Case -->
+        <div class="col-6 col-md-3 col-lg-3">
+          <div class="part-card-3d">
+            <div class="part-card-3d-inner">
+              <div class="part-card-glare"></div>
+              <div class="part-card-icon">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="19" y="6" width="26" height="52" rx="2"></rect>
+                  <circle cx="25" cy="14" r="1.6" fill="currentColor" stroke="none"></circle>
+                  <line x1="23" y1="24" x2="41" y2="24"></line>
+                  <line x1="23" y1="30" x2="41" y2="30"></line>
+                  <line x1="23" y1="46" x2="41" y2="46"></line>
+                  <line x1="23" y1="51" x2="41" y2="51"></line>
+                </svg>
+              </div>
+              <p class="part-card-name">Case</p>
+              <p class="part-card-tag">System Unit</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Power Supply -->
+        <div class="col-6 col-md-3 col-lg-3">
+          <div class="part-card-3d">
+            <div class="part-card-3d-inner">
+              <div class="part-card-glare"></div>
+              <div class="part-card-icon">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="8" y="18" width="44" height="28" rx="4"></rect>
+                  <circle cx="30" cy="32" r="9"></circle>
+                  <line x1="30" y1="23" x2="30" y2="41"></line>
+                  <line x1="21" y1="32" x2="39" y2="32"></line>
+                  <path d="M48 40 L56 48"></path>
+                  <circle cx="56" cy="48" r="2" fill="currentColor" stroke="none"></circle>
+                </svg>
+              </div>
+              <p class="part-card-name">PSU</p>
+              <p class="part-card-tag">Power Supply</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RAM -->
+        <div class="col-6 col-md-3 col-lg-3">
+          <div class="part-card-3d">
+            <div class="part-card-3d-inner">
+              <div class="part-card-glare"></div>
+              <div class="part-card-icon">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="8" y="22" width="48" height="20" rx="2"></rect>
+                  <rect x="14" y="14" width="6" height="8" rx="1"></rect>
+                  <rect x="24" y="14" width="6" height="8" rx="1"></rect>
+                  <rect x="34" y="14" width="6" height="8" rx="1"></rect>
+                  <rect x="44" y="14" width="6" height="8" rx="1"></rect>
+                  <line x1="14" y1="46" x2="14" y2="50"></line>
+                  <line x1="22" y1="46" x2="22" y2="50"></line>
+                  <line x1="30" y1="46" x2="30" y2="50"></line>
+                  <line x1="38" y1="46" x2="38" y2="50"></line>
+                  <line x1="46" y1="46" x2="46" y2="50"></line>
+                </svg>
+              </div>
+              <p class="part-card-name">RAM</p>
+              <p class="part-card-tag">Memory</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- NVMe -->
+        <div class="col-6 col-md-3 col-lg-3">
+          <div class="part-card-3d">
+            <div class="part-card-3d-inner">
+              <div class="part-card-glare"></div>
+              <div class="part-card-icon">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="6" y="28" width="50" height="8" rx="1.5"></rect>
+                  <rect x="14" y="22" width="14" height="20" rx="1.5"></rect>
+                  <rect x="34" y="22" width="10" height="20" rx="1.5"></rect>
+                  <circle cx="52" cy="32" r="2" fill="currentColor" stroke="none"></circle>
+                </svg>
+              </div>
+              <p class="part-card-name">NVMe</p>
+              <p class="part-card-tag">M.2 Storage</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== HOW IT WORKS ======================== -->
+  <section class="articles-section py-5">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <p class="section-label">PROCESS</p>
+        <h2 class="section-title">How It Works</h2>
+      </div>
+
+      <div class="experience-timeline">
+
+        <div class="exp-item">
+          <div class="exp-dot exp-dot--active"><i class="bi bi-chat-dots"></i></div>
+          <div class="exp-content exp-content--active">
+            <span class="exp-date">Step 1</span>
+            <h5 class="exp-role">Message Me</h5>
+            <ul class="exp-bullets">
+              <li>Send your concern through the contact form or Facebook &mdash; remote support, parts, or software.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-dot"><i class="bi bi-search"></i></div>
+          <div class="exp-content">
+            <span class="exp-date">Step 2</span>
+            <h5 class="exp-role">Quick Assessment</h5>
+            <ul class="exp-bullets">
+              <li>I'll ask a few questions to understand exactly what's needed before anything starts.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-dot"><i class="bi bi-clipboard-check"></i></div>
+          <div class="exp-content">
+            <span class="exp-date">Step 3</span>
+            <h5 class="exp-role">Quote &amp; Schedule</h5>
+            <ul class="exp-bullets">
+              <li>You get a clear quote and timeline upfront &mdash; no surprises.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item exp-item--last">
+          <div class="exp-dot"><i class="bi bi-check-circle"></i></div>
+          <div class="exp-content">
+            <span class="exp-date">Step 4</span>
+            <h5 class="exp-role">Get It Done</h5>
+            <ul class="exp-bullets">
+              <li>Remote session, parts delivered &amp; built, or purchase walkthrough completed.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FAQ ======================== -->
+  <section class="py-5" style="background: var(--bg);">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <p class="section-label">QUESTIONS</p>
+        <h2 class="section-title">Frequently Asked</h2>
+      </div>
+
+      <div class="accordion faq-accordion mx-auto" id="servicesFaq" style="max-width:760px;">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              Malayo ako sa Metro Manila, kaya mo bang tulungan?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#servicesFaq">
+            <div class="accordion-body">Oo. Karamihan ng IT support na ginagawa ko ay remote session, kaya kahit saan ka sa Pilipinas pwede tayong mag-ayos ng schedule. Para sa parts at builds, may mga lugar na may delivery fee depende sa distance.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              Saan nanggagaling ang computer parts na ibebenta mo?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#servicesFaq">
+            <div class="accordion-body">Sourced from trusted local suppliers and retailers &mdash; hindi ako gumagamit ng hindi malinaw na pinagmulan. Ipapakita ko rin sa'yo ang quotation bago tayo magsimula para transparent ang presyo.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              Nagbebenta ka ba ng Windows / Office product keys?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#servicesFaq">
+            <div class="accordion-body">Hindi. Hindi ako nagbebenta o namamahagi ng product keys. Gagabayan lang kita kung paano bumili ng genuine license mula sa official Microsoft store, kasama ang activation at setup assistance &mdash; para sigurado kang sumusunod sa licensing policies.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+              Magkano ang singil mo?
+            </button>
+          </h2>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#servicesFaq">
+            <div class="accordion-body">Depende sa scope ng trabaho. I-message mo lang ako ng konting detalye tungkol sa problema o build, at bibigyan kita ng quote bago tayo magsimula &mdash; walang hidden charges.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== CTA ======================== -->
+  <section class="py-5" style="background: var(--bg-secondary); border-top:1px solid var(--border);">
+    <div class="container text-center">
+      <p class="section-label mb-2">LET'S TALK</p>
+      <h2 class="section-title mb-3">Got a computer problem or project in mind?</h2>
+      <p style="color:var(--text-muted); max-width:520px; margin:0 auto 1.75rem; line-height:1.7;">Send me the details and I'll get back to you with a clear plan and quote.</p>
+      <button type="button" class="btn btn-resume" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Me <i class="bi bi-envelope ms-1"></i></button>
+    </div>
+  </section>
+
+  <footer class="site-footer py-5">
+    <div class="container text-center">
+      <div class="footer-divider mb-4"></div>
+      <p class="footer-copy">&copy; 2026 Janmar Albis. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ======================== CONTACT MODAL ======================== -->
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content resume-modal-content">
+        <div class="modal-header border-0 pb-0">
+          <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body px-4 pb-4 pt-2">
+          <div class="contact-modal-icon mb-3"><i class="bi bi-chat-dots-fill"></i></div>
+          <h5 class="resume-modal-title text-center mb-1">Let's Work Together</h5>
+          <p class="resume-modal-subtitle text-center mb-4">Fill out the form below and I'll get back to you as soon as possible.</p>
+          <div id="contactAlert" class="contact-alert d-none" role="alert"></div>
+          <div id="contactFormWrap">
+            <div class="mb-3">
+              <label class="contact-label" for="contactName">Your Name</label>
+              <input type="text" id="contactName" class="contact-input" placeholder="Juan dela Cruz" autocomplete="name" />
+              <span class="contact-error" id="errName"></span>
+            </div>
+            <div class="mb-3">
+              <label class="contact-label" for="contactEmail">Email Address</label>
+              <input type="email" id="contactEmail" class="contact-input" placeholder="juan@email.com" autocomplete="email" />
+              <span class="contact-error" id="errEmail"></span>
+            </div>
+            <div class="mb-3">
+              <label class="contact-label" for="contactSubject">Subject</label>
+              <input type="text" id="contactSubject" class="contact-input" placeholder="Project Inquiry" />
+              <span class="contact-error" id="errSubject"></span>
+            </div>
+            <div class="mb-4">
+              <label class="contact-label" for="contactMessage">Message</label>
+              <textarea id="contactMessage" class="contact-input contact-textarea" rows="4" placeholder="Hi Janmar, I'd like to discuss..."></textarea>
+              <span class="contact-error" id="errMessage"></span>
+            </div>
+            <button id="contactSubmitBtn" class="btn btn-resume w-100" type="button">
+              <span id="contactBtnText">Send Message <i class="bi bi-send-fill ms-1"></i></span>
+              <span id="contactBtnLoading" class="d-none"><span class="spinner-border spinner-border-sm me-2" role="status"></span>Sending...</span>
+            </button>
+          </div>
+          <div id="contactSuccess" class="text-center d-none">
+            <div class="contact-success-icon mb-3"><i class="bi bi-check-circle-fill"></i></div>
+            <h6 class="fw-700 mb-1" style="color:var(--text)">Message Sent!</h6>
+            <p class="resume-modal-subtitle mb-0">Thanks! I'll reply to you shortly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    // 3D tilt effect for the Parts Showcase cards
+    const partCards = document.querySelectorAll('.part-card-3d');
+    const maxTilt = 14;
+    partCards.forEach(function (card) {
+      const inner = card.querySelector('.part-card-3d-inner');
+      if (!inner) return;
+
+      card.addEventListener('mousemove', function (e) {
+        const rect = card.getBoundingClientRect();
+        const px = (e.clientX - rect.left) / rect.width;
+        const py = (e.clientY - rect.top) / rect.height;
+        const rotateY = (px - 0.5) * maxTilt * 2;
+        const rotateX = (0.5 - py) * maxTilt * 2;
+        inner.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05,1.05,1.05)`;
+        card.style.setProperty('--glow-x', (px * 100) + '%');
+        card.style.setProperty('--glow-y', (py * 100) + '%');
+      });
+
+      card.addEventListener('mouseleave', function () {
+        inner.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+      });
+    });
+  </script>
+</body>
+</html>
