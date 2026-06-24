@@ -1469,3 +1469,12 @@ a { text-decoration: none; color: inherit; }
   filter: invert(1) hue-rotate(180deg);
 }
 
+/* ============================================================
+   RECAPTCHA SCALE FIX
+   ============================================================ */
+#recaptcha-widget {
+  transform: scale(0.85);
+  transform-origin: left top;
+  width: calc(100% / 0.85);
+}
+
