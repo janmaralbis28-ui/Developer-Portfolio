@@ -245,11 +245,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, {
-        from_name:  nameEl.value.trim(),
-        from_email: emailEl.value.trim(),
-        subject:    subjectEl.value.trim(),
-        message:    messageEl.value.trim(),
-        to_name:    'Janmar',
+        from_name:            nameEl.value.trim(),
+        from_email:           emailEl.value.trim(),
+        subject:              subjectEl.value.trim(),
+        message:              messageEl.value.trim(),
+        to_name:              'Janmar',
+        'g-recaptcha-response': recaptchaResponse,
       });
       document.getElementById('contactFormWrap').classList.add('d-none');
       document.getElementById('contactSuccess').classList.remove('d-none');
