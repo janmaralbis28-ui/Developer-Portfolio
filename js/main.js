@@ -59,9 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateThemeIcon(theme) {
     const cls = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
-    if (themeIcon)      themeIcon.className = cls;
+    if (themeIcon)       themeIcon.className = cls;
     if (mobileThemeIcon) mobileThemeIcon.className = cls;
-    if (mobileNavIcon)  mobileNavIcon.className = cls;
+    if (mobileNavIcon)   mobileNavIcon.className = cls;
   }
 
   function toggleTheme() {
@@ -126,12 +126,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* ---- Contact Form ---- */
+  /* ---- Contact Form + reCAPTCHA ---- */
   const SERVICE_ID  = 'service_f9pxjun';
   const TEMPLATE_ID = 'template_ifka6pi';
   const PUBLIC_KEY  = 'ZV9IifKMEpsZRelNP';
   emailjs.init({ publicKey: PUBLIC_KEY });
 
+  // Reset form state when modal closes
   const contactModal = document.getElementById('contactModal');
   if (contactModal) {
     contactModal.addEventListener('hidden.bs.modal', () => {
@@ -150,6 +151,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (btn) btn.disabled = false;
       document.getElementById('contactBtnText')?.classList.remove('d-none');
       document.getElementById('contactBtnLoading')?.classList.add('d-none');
+
+      // Reset reCAPTCHA widget when modal closes
+      if (typeof grecaptcha !== 'undefined') {
+        const widget = document.getElementById('recaptcha-widget');
+        if (widget) grecaptcha.reset();
+      }
     });
   }
 
@@ -160,12 +167,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const messageEl = document.getElementById('contactMessage');
     const alertEl   = document.getElementById('contactAlert');
 
+    // Clear previous errors
     [nameEl, emailEl, subjectEl, messageEl].forEach(el => el.classList.remove('is-invalid'));
     ['errName','errEmail','errSubject','errMessage'].forEach(id => {
       document.getElementById(id).textContent = '';
     });
     alertEl.className = 'contact-alert d-none';
 
+    // Validate fields
     let valid = true;
     if (!nameEl.value.trim()) {
       nameEl.classList.add('is-invalid');
@@ -190,6 +199,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (!valid) return;
 
+    // Check reCAPTCHA
+    const recaptchaResponse = typeof grecaptcha !== 'undefined'
+      ? grecaptcha.getResponse()
+      : null;
+
+    if (!recaptchaResponse) {
+      alertEl.className = 'contact-alert alert-danger';
+      alertEl.textContent = 'Please complete the reCAPTCHA verification.';
+      alertEl.classList.remove('d-none');
+      return;
+    }
+
+    // Show loading state
     const btn = document.getElementById('contactSubmitBtn');
     btn.disabled = true;
     document.getElementById('contactBtnText').classList.add('d-none');
@@ -213,6 +235,8 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.disabled = false;
       document.getElementById('contactBtnText').classList.remove('d-none');
       document.getElementById('contactBtnLoading').classList.add('d-none');
+      // Reset reCAPTCHA on error so user can try again
+      if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
     }
   });
 
@@ -227,18 +251,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const isOpen = body.classList.contains('open');
 
       if (isOpen) {
-        // Collapse
         body.classList.remove('open');
         toggleBtn.classList.remove('open');
         toggleBtn.setAttribute('aria-expanded', 'false');
         toggleBtn.innerHTML = 'Read Article <i class="toggle-icon bi bi-chevron-down"></i>';
         card.classList.remove('open');
-        // Restore to half-width col
         card.closest('.col-12').className = 'col-12 col-md-6';
       } else {
-        // Collapse any other open article first
         document.querySelectorAll('.article-card.expandable.open').forEach(openCard => {
-          const ob = openCard.querySelector('.article-body');
+          const ob     = openCard.querySelector('.article-body');
           const ob_btn = openCard.querySelector('.article-toggle-btn');
           ob?.classList.remove('open');
           ob_btn?.classList.remove('open');
@@ -247,14 +268,12 @@ document.addEventListener('DOMContentLoaded', () => {
           openCard.classList.remove('open');
           openCard.closest('.col-12').className = 'col-12 col-md-6';
         });
-        // Expand — go full width
         body.classList.add('open');
         toggleBtn.classList.add('open');
         toggleBtn.setAttribute('aria-expanded', 'true');
         toggleBtn.innerHTML = 'Close Article <i class="toggle-icon bi bi-chevron-down"></i>';
         card.classList.add('open');
         card.closest('.col-12').className = 'col-12';
-        // Smooth scroll
         setTimeout(() => {
           card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }, 80);
