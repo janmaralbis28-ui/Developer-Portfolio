@@ -15,7 +15,7 @@ function onRecaptchaLoad() {
   if (!container || recaptchaWidgetId !== null) return;
   const theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
   recaptchaWidgetId = grecaptcha.render('recaptcha-widget', {
-    sitekey: '6LdZ8zAtAAAAAGc0uo5YkAg1tJDVo75KOz976pyd',
+    sitekey: '6LetDDEtAAAAAOgDAGKyZ6SYQvM7HPDm_5_XbnCB',
     theme: theme
   });
 }
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // First open — render it
         const theme = html.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
         recaptchaWidgetId = grecaptcha.render('recaptcha-widget', {
-          sitekey: '6LdZ8zAtAAAAAGc0uo5YkAg1tJDVo75KOz976pyd',
+          sitekey: '6LetDDEtAAAAAOgDAGKyZ6SYQvM7HPDm_5_XbnCB',
           theme: theme
         });
       } else {
