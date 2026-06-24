@@ -8,6 +8,19 @@ if ('scrollRestoration' in history) {
 }
 window.scrollTo(0, 0);
 
+// ---- reCAPTCHA explicit render (called by Google's API after load) ----
+let recaptchaWidgetId = null;
+function onRecaptchaLoad() {
+  const container = document.getElementById('recaptcha-widget');
+  if (!container || recaptchaWidgetId !== null) return;
+  const theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  recaptchaWidgetId = grecaptcha.render('recaptcha-widget', {
+    sitekey: '6Lfz6TAtAAAAP07QzEKYaZdEbD3ACoZynYCgnSZ',
+    theme: theme
+  });
+}
+window.onRecaptchaLoad = onRecaptchaLoad;
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ---- Hero Typewriter ---- */
@@ -132,10 +145,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const PUBLIC_KEY  = 'ZV9IifKMEpsZRelNP';
   emailjs.init({ publicKey: PUBLIC_KEY });
 
-  // Reset form state when modal closes
-  const contactModal = document.getElementById('contactModal');
-  if (contactModal) {
-    contactModal.addEventListener('hidden.bs.modal', () => {
+  // Render reCAPTCHA when modal opens (fixes modal timing issue)
+  const contactModalEl = document.getElementById('contactModal');
+  if (contactModalEl) {
+    contactModalEl.addEventListener('shown.bs.modal', () => {
+      const container = document.getElementById('recaptcha-widget');
+      if (!container) return;
+      if (typeof grecaptcha === 'undefined') return;
+
+      if (recaptchaWidgetId === null) {
+        // First open — render it
+        const theme = html.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+        recaptchaWidgetId = grecaptcha.render('recaptcha-widget', {
+          sitekey: '6Lfz6TAtAAAAP07QzEKYaZdEbD3ACoZynYCgnSZ',
+          theme: theme
+        });
+      } else {
+        // Already rendered — just reset
+        grecaptcha.reset(recaptchaWidgetId);
+      }
+    });
+
+    // Reset form when modal closes
+    contactModalEl.addEventListener('hidden.bs.modal', () => {
       ['contactName','contactEmail','contactSubject','contactMessage'].forEach(id => {
         const el = document.getElementById(id);
         if (el) { el.value = ''; el.classList.remove('is-invalid'); }
@@ -151,12 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (btn) btn.disabled = false;
       document.getElementById('contactBtnText')?.classList.remove('d-none');
       document.getElementById('contactBtnLoading')?.classList.add('d-none');
-
-      // Reset reCAPTCHA widget when modal closes
-      if (typeof grecaptcha !== 'undefined') {
-        const widget = document.getElementById('recaptcha-widget');
-        if (widget) grecaptcha.reset();
-      }
     });
   }
 
@@ -200,9 +226,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!valid) return;
 
     // Check reCAPTCHA
-    const recaptchaResponse = typeof grecaptcha !== 'undefined'
-      ? grecaptcha.getResponse()
-      : null;
+    const recaptchaResponse = (typeof grecaptcha !== 'undefined' && recaptchaWidgetId !== null)
+      ? grecaptcha.getResponse(recaptchaWidgetId)
+      : '';
 
     if (!recaptchaResponse) {
       alertEl.className = 'contact-alert alert-danger';
@@ -235,8 +261,9 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.disabled = false;
       document.getElementById('contactBtnText').classList.remove('d-none');
       document.getElementById('contactBtnLoading').classList.add('d-none');
-      // Reset reCAPTCHA on error so user can try again
-      if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
+      if (typeof grecaptcha !== 'undefined' && recaptchaWidgetId !== null) {
+        grecaptcha.reset(recaptchaWidgetId);
+      }
     }
   });
 

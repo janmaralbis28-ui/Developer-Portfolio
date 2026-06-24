@@ -601,7 +601,7 @@
               <span class="contact-error" id="errMessage"></span>
             </div>
             <!-- reCAPTCHA -->
-            <div id="recaptcha-widget" class="g-recaptcha mb-3" data-sitekey="6Lfz6TAtAAAAP07QzEKYaZdEbD3ACoZynYCgnSZ" data-theme="dark"></div>
+            <div id="recaptcha-widget" class="mb-3"></div>
 
             <button id="contactSubmitBtn" class="btn btn-resume w-100" type="button">
               <span id="contactBtnText">Send Message <i class="bi bi-send-fill ms-1"></i></span>
@@ -629,7 +629,7 @@
   </div>
 
   <!-- reCAPTCHA -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" async defer></script>
   <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
