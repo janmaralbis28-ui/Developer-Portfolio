@@ -255,7 +255,9 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('contactFormWrap').classList.add('d-none');
       document.getElementById('contactSuccess').classList.remove('d-none');
     } catch (err) {
-      console.error('EmailJS error:', err);
+      console.error('EmailJS error status:', err.status);
+      console.error('EmailJS error text:', err.text);
+      console.error('EmailJS full error:', JSON.stringify(err));
       alertEl.className = 'contact-alert alert-danger';
       alertEl.textContent = 'Something went wrong. Please try again or email me directly.';
       alertEl.classList.remove('d-none');
