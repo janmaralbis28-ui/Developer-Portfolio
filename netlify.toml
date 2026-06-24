@@ -1,0 +1,57 @@
+# ============================================================
+#  Janmar Albis Portfolio — netlify.toml
+#  Security headers + redirect rules
+# ============================================================
+
+# --- 404 redirect ---
+[[redirects]]
+  from   = "/*"
+  to     = "/404.html"
+  status = 404
+
+# --- Security Headers (applied to all pages) ---
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+
+    # Prevent your site from being embedded in iframes (clickjacking protection)
+    X-Frame-Options = "SAMEORIGIN"
+
+    # Prevent browsers from MIME-sniffing content types
+    X-Content-Type-Options = "nosniff"
+
+    # Enable browser XSS filter (older browsers)
+    X-XSS-Protection = "1; mode=block"
+
+    # Control referrer info sent to other sites
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Permissions Policy — disable features you don't need
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+
+    # Content Security Policy — only allow scripts/styles from trusted sources
+    Content-Security-Policy = """
+      default-src 'self';
+      script-src 'self' 'unsafe-inline'
+        https://cdn.jsdelivr.net
+        https://www.googletagmanager.com
+        https://www.google-analytics.com
+        https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js;
+      style-src 'self' 'unsafe-inline'
+        https://cdn.jsdelivr.net
+        https://fonts.googleapis.com;
+      font-src 'self'
+        https://fonts.gstatic.com
+        https://cdn.jsdelivr.net;
+      img-src 'self' data:
+        https://www.google-analytics.com
+        https://github-readme-stats.vercel.app;
+      connect-src 'self'
+        https://api.emailjs.com
+        https://www.google-analytics.com
+        https://region1.google-analytics.com;
+      frame-src 'none';
+      object-src 'none';
+      base-uri 'self';
+    """
