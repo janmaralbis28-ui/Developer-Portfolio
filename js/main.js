@@ -216,6 +216,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  /* ---- Expandable Article Cards ---- */
+  document.querySelectorAll('.article-card.expandable').forEach(card => {
+    const toggleBtn = card.querySelector('.article-toggle-btn');
+    const body      = card.querySelector('.article-body');
+    if (!toggleBtn || !body) return;
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = body.classList.contains('open');
+
+      if (isOpen) {
+        // Collapse
+        body.classList.remove('open');
+        toggleBtn.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        toggleBtn.innerHTML = 'Read Article <i class="toggle-icon bi bi-chevron-down"></i>';
+        card.classList.remove('open');
+        // Restore to half-width col
+        card.closest('.col-12').className = 'col-12 col-md-6';
+      } else {
+        // Collapse any other open article first
+        document.querySelectorAll('.article-card.expandable.open').forEach(openCard => {
+          const ob = openCard.querySelector('.article-body');
+          const ob_btn = openCard.querySelector('.article-toggle-btn');
+          ob?.classList.remove('open');
+          ob_btn?.classList.remove('open');
+          ob_btn?.setAttribute('aria-expanded', 'false');
+          if (ob_btn) ob_btn.innerHTML = 'Read Article <i class="toggle-icon bi bi-chevron-down"></i>';
+          openCard.classList.remove('open');
+          openCard.closest('.col-12').className = 'col-12 col-md-6';
+        });
+        // Expand — go full width
+        body.classList.add('open');
+        toggleBtn.classList.add('open');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        toggleBtn.innerHTML = 'Close Article <i class="toggle-icon bi bi-chevron-down"></i>';
+        card.classList.add('open');
+        card.closest('.col-12').className = 'col-12';
+        // Smooth scroll
+        setTimeout(() => {
+          card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 80);
+      }
+    });
+  });
+
   /* ---- Scroll Fade In ---- */
   const fadeEls = document.querySelectorAll(
     '.project-card, .article-card, .skill-tag, .section-header'

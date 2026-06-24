@@ -180,6 +180,51 @@
     </div>
   </section>
 
+  <!-- ======================== PRICING ======================== -->
+  <section class="py-5" style="background: var(--bg-secondary); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <p class="section-label">PRICING</p>
+        <h2 class="section-title">How Pricing Works</h2>
+        <p style="color:var(--text-muted); max-width:560px; margin:0.75rem auto 0; line-height:1.7;">No fixed price list &mdash; every task is different. Message me the details and I'll give you a straight quote, no obligation.</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="pricing-card">
+            <div class="service-icon"><i class="bi bi-headset"></i></div>
+            <span class="pricing-badge pricing-badge-quote">Custom Quote</span>
+            <h5 class="service-title">Remote IT Support</h5>
+            <p class="service-desc">Rate depends on the issue's complexity and time needed. Message me what's wrong and I'll give you a fair quote upfront &mdash; no surprises.</p>
+            <button type="button" class="btn btn-outline w-100" data-bs-toggle="modal" data-bs-target="#contactModal">Message for Quote <i class="bi bi-arrow-right ms-1"></i></button>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="pricing-card">
+            <div class="service-icon"><i class="bi bi-cpu"></i></div>
+            <span class="pricing-badge pricing-badge-quote">Custom Quote</span>
+            <h5 class="service-title">PC Build / Parts</h5>
+            <p class="service-desc">Labor &amp; consultation fee is separate from parts cost &mdash; parts are billed at supplier price, no markup. Message me your budget and use case for an exact quote.</p>
+            <button type="button" class="btn btn-outline w-100" data-bs-toggle="modal" data-bs-target="#contactModal">Message for Quote <i class="bi bi-arrow-right ms-1"></i></button>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="pricing-card">
+            <div class="service-icon"><i class="bi bi-shield-check"></i></div>
+            <span class="pricing-badge pricing-badge-free">Free</span>
+            <h5 class="service-title">Software Purchase Guide</h5>
+            <p class="service-desc">No charge for this one &mdash; just a straight walkthrough so you buy the right genuine license at the right price.</p>
+            <button type="button" class="btn btn-outline w-100" data-bs-toggle="modal" data-bs-target="#contactModal">Ask Me How <i class="bi bi-arrow-right ms-1"></i></button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ======================== 3D PARTS SHOWCASE ======================== -->
   <section class="py-5 parts-showcase-section" style="background: var(--bg-secondary); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
     <div class="container">
@@ -521,6 +566,18 @@
           <div class="contact-modal-icon mb-3"><i class="bi bi-chat-dots-fill"></i></div>
           <h5 class="resume-modal-title text-center mb-1">Let's Work Together</h5>
           <p class="resume-modal-subtitle text-center mb-4">Fill out the form below and I'll get back to you as soon as possible.</p>
+          <div class="contact-channel-row mb-3">
+            <a href="viber://chat?number=%2B639519734432" target="_blank" rel="noopener noreferrer" class="contact-channel-btn contact-channel-viber">
+              <i class="bi bi-telephone-fill"></i><span>Viber</span>
+            </a>
+            <a href="https://m.me/janmar.albis.2025" target="_blank" rel="noopener noreferrer" class="contact-channel-btn contact-channel-messenger">
+              <i class="bi bi-messenger"></i><span>Messenger</span>
+            </a>
+            <a href="mailto:janmaralbis28@gmail.com" class="contact-channel-btn contact-channel-email">
+              <i class="bi bi-envelope-fill"></i><span>Email</span>
+            </a>
+          </div>
+          <p class="contact-channel-divider">or fill out the form</p>
           <div id="contactAlert" class="contact-alert d-none" role="alert"></div>
           <div id="contactFormWrap">
             <div class="mb-3">
@@ -556,6 +613,16 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- ======================== FLOATING CHAT BUTTONS ======================== -->
+  <div class="fab-chat-group">
+    <a href="viber://chat?number=%2B639519734432" target="_blank" rel="noopener noreferrer" class="fab-btn fab-viber" data-label="Viber" aria-label="Message on Viber">
+      <i class="bi bi-telephone-fill"></i>
+    </a>
+    <a href="https://m.me/janmar.albis.2025" target="_blank" rel="noopener noreferrer" class="fab-btn fab-messenger" data-label="Messenger" aria-label="Message on Messenger">
+      <i class="bi bi-messenger"></i>
+    </a>
   </div>
 
   <!-- EmailJS -->

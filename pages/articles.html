@@ -113,51 +113,208 @@
     <div class="container">
       <div class="row g-4">
 
+        <!-- ARTICLE 1: Career Journey -->
         <div class="col-12 col-md-6">
-          <div class="article-card p-4">
+          <div class="article-card expandable p-4" data-article="1">
             <div class="d-flex justify-content-between align-items-start mb-2">
-              <span class="article-date">May 2026</span>
+              <span class="article-date">June 2026</span>
               <span class="tech-badge">Career</span>
             </div>
             <h5 class="article-title">From IT Support to Junior Developer: My Honest Journey</h5>
             <p class="article-excerpt">How I went from troubleshooting printers and cables in government offices to building full-stack web applications — the struggles, the breakthroughs, and what I wish I knew earlier.</p>
-            <span class="coming-soon-link mt-3"><i class="bi bi-clock me-1"></i>Coming Soon</span>
+            <button class="article-toggle-btn" aria-expanded="false">
+              Read Article <i class="toggle-icon bi bi-chevron-down"></i>
+            </button>
+            <div class="article-body">
+              <hr class="article-body-divider"/>
+              <div class="article-content">
+                <h3>It didn't start with code.</h3>
+                <p>My first real job in tech wasn't writing a single line of code. It was pulling network cables, restarting routers, and explaining to government employees why their printer wasn't working. I was an IT Support specialist at a local government unit — and honestly, I thought that was where my career would stay.</p>
+                <p>But somewhere between fixing PCs and setting up workstations, I started asking a different question: <em>why does this software work this way?</em> And then: <em>can I build something better?</em></p>
+
+                <h3>The self-teaching phase (and how messy it actually is)</h3>
+                <p>I didn't go through a bootcamp. I didn't have a mentor. I learned VB.NET from YouTube videos, Stack Overflow threads, and a lot of trial and error. The first real system I built was for our own office — a simple tracking tool that replaced a spreadsheet nobody could agree on.</p>
+                <p>It was ugly. It barely worked. But it <em>worked</em>. And people used it. That feeling — seeing something you built solve a real problem — is what kept me going.</p>
+
+                <h3>The jump to full-stack web</h3>
+                <p>Staying in desktop development felt like a ceiling. I started learning HTML, CSS, then JavaScript. React was confusing at first — I genuinely didn't understand why JSX existed. Node.js made more sense once I realized it was just JavaScript on the backend.</p>
+                <p>The turning point was getting a job as a Junior Developer and being thrown into a real production codebase on day one. No tutorials prepare you for that. You read unfamiliar code, you break things, you fix them. That's the actual job.</p>
+
+                <h3>What I wish I knew earlier</h3>
+                <ul>
+                  <li>Your first job doesn't define your ceiling. IT support taught me how systems fail — that knowledge is underrated in dev work.</li>
+                  <li>Build real things, not just tutorial projects. Even small tools that solve your own problems teach you more than courses.</li>
+                  <li>Reading other people's code is a skill. Practice it early.</li>
+                  <li>You don't need to know everything before you start. You learn by shipping.</li>
+                </ul>
+
+                <h3>Where I am now</h3>
+                <p>Today I'm building full-stack web applications using React, Node.js, SQL Server, and MySQL. I still remember what it felt like to not know where to start. If you're in that phase right now — keep going. The gap between where you are and where you want to be is just time and repetition.</p>
+
+                <div class="article-tag-row">
+                  <span class="article-tag">Career</span>
+                  <span class="article-tag">Self-taught</span>
+                  <span class="article-tag">IT Support</span>
+                  <span class="article-tag">Junior Dev</span>
+                  <span class="article-tag">VB.NET</span>
+                  <span class="article-tag">Web Dev</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- ARTICLE 2: VB.NET Civil Registry -->
         <div class="col-12 col-md-6">
-          <div class="article-card p-4">
+          <div class="article-card expandable p-4" data-article="2">
             <div class="d-flex justify-content-between align-items-start mb-2">
-              <span class="article-date">May 2026</span>
+              <span class="article-date">June 2026</span>
               <span class="tech-badge">VB.NET</span>
             </div>
             <h5 class="article-title">Building a Civil Registry System from Scratch with VB.NET</h5>
             <p class="article-excerpt">A deep dive into how I designed and built the App Registry System V2 for a local civil registrar — database structure, reporting with Crystal Reports, and the real challenges of government software.</p>
-            <span class="coming-soon-link mt-3"><i class="bi bi-clock me-1"></i>Coming Soon</span>
+            <button class="article-toggle-btn" aria-expanded="false">
+              Read Article <i class="toggle-icon bi bi-chevron-down"></i>
+            </button>
+            <div class="article-body">
+              <hr class="article-body-divider"/>
+              <div class="article-content">
+                <h3>The project nobody warned me about</h3>
+                <p>When I was tasked with building the App Registry System V2 for a local civil registrar, I thought it was a straightforward database CRUD app. Store records. Print reports. Done.</p>
+                <p>I was wrong. Government civil registry systems carry legal weight. Every birth, death, and marriage record has to be accurate, auditable, and retrievable on demand — often years later. That changes how you design everything.</p>
+
+                <h3>The database design challenge</h3>
+                <p>The first version of the system had everything in one massive table. Querying it was a nightmare, and adding new fields broke existing reports. For V2, I normalized the structure properly — separate tables for document types, registrants, and transactions — with foreign keys tying everything together.</p>
+                <p>I used SQL Server as the backend. One thing I learned fast: indexes matter a lot when you're searching through thousands of records by last name, date, or document number. Without them, even simple lookups crawled.</p>
+
+                <h3>Crystal Reports: powerful but painful</h3>
+                <p>The official documents required specific formats — NSO-compliant layouts with exact field placements. Crystal Reports was the tool for this, and while it gets the job done, the learning curve is steep if you've never touched it before.</p>
+                <p>The biggest challenge was making reports dynamic — different document types needed different layouts, but the data source was the same. I ended up using subreports and conditional formatting to handle this without duplicating report files for every document type.</p>
+
+                <h3>Real-world government software constraints</h3>
+                <ul>
+                  <li>Offline-first is not optional. Government offices often have unstable internet. The whole system had to work without a connection.</li>
+                  <li>Non-tech users are the primary audience. The UI had to be dead simple — large buttons, clear labels, no jargon.</li>
+                  <li>Data validation is critical. Misspelled names in a legal document cause real bureaucratic problems for real people.</li>
+                  <li>Backup systems need to be idiot-proof. I built a one-click backup that saved to both local and USB automatically.</li>
+                </ul>
+
+                <h3>What I'd do differently</h3>
+                <p>If I built this today, I'd use a web-based stack instead of WinForms — easier to update, no installation headaches, and accessible from any device in the office. But at the time, VB.NET + SQL Server was the right call for the environment and the team maintaining it.</p>
+                <p>The system is still running. That's the best feedback you can get.</p>
+
+                <div class="article-tag-row">
+                  <span class="article-tag">VB.NET</span>
+                  <span class="article-tag">SQL Server</span>
+                  <span class="article-tag">Crystal Reports</span>
+                  <span class="article-tag">Government</span>
+                  <span class="article-tag">Desktop App</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- ARTICLE 3: LGU Software -->
         <div class="col-12 col-md-6">
-          <div class="article-card p-4">
+          <div class="article-card expandable p-4" data-article="3">
             <div class="d-flex justify-content-between align-items-start mb-2">
-              <span class="article-date">May 2026</span>
+              <span class="article-date">June 2026</span>
               <span class="tech-badge">Government Tech</span>
             </div>
             <h5 class="article-title">What LGUs Actually Need in Their Software (And What Devs Get Wrong)</h5>
             <p class="article-excerpt">After building systems for barangay and civil registry offices, I've seen firsthand what local government units truly need — and why off-the-shelf software often fails them.</p>
-            <span class="coming-soon-link mt-3"><i class="bi bi-clock me-1"></i>Coming Soon</span>
+            <button class="article-toggle-btn" aria-expanded="false">
+              Read Article <i class="toggle-icon bi bi-chevron-down"></i>
+            </button>
+            <div class="article-body">
+              <hr class="article-body-divider"/>
+              <div class="article-content">
+                <h3>The assumption that kills LGU software projects</h3>
+                <p>Most developers who build software for local government units approach it the same way they'd approach any enterprise system: design for features, optimize for scale, follow best practices. The problem is that LGU environments don't follow those assumptions.</p>
+                <p>I've built and maintained systems for barangay offices and civil registrars. Here's what I actually observed — and what I wish someone had told me before I started.</p>
+
+                <h3>What LGUs actually need</h3>
+                <ul>
+                  <li><strong>Simplicity over features.</strong> Staff turnover is high and training time is short. If a new employee can't figure out a core task in under five minutes, the software will be abandoned and they'll go back to Excel.</li>
+                  <li><strong>Offline capability.</strong> Internet in many government offices is unreliable or shared across too many users. A system that requires constant connectivity will fail daily.</li>
+                  <li><strong>Printable outputs.</strong> Physical documents are still legally required for most transactions. If your software can't produce a properly formatted printout, it's missing a core requirement.</li>
+                  <li><strong>Audit trails.</strong> Who edited what record, and when? This matters for accountability. Even a basic log table goes a long way.</li>
+                  <li><strong>Local backup that actually works.</strong> Cloud backup sounds great on paper. In practice, staff won't set it up, won't maintain it, and won't notice when it breaks. Local, automated, physical backups are more reliable in this context.</li>
+                </ul>
+
+                <h3>What devs get wrong</h3>
+                <p>The most common mistake is building for the demo, not for daily use. A system can look polished and professional in a presentation, but if the workflow doesn't match how the office actually operates — down to which physical documents they fill out, in what order — they won't use it.</p>
+                <p>Another mistake: ignoring the maintenance reality. Who will fix bugs after the project ends? If the answer is "nobody on-site," you need to design the system to fail gracefully and give clear error messages that a non-tech person can relay to a remote developer.</p>
+
+                <h3>The approach that works</h3>
+                <p>Spend time in the office before you write a single line of code. Watch how they work. Ask what frustrates them about their current process — not what features they want, but what wastes their time. Build that solution first. Everything else is optional.</p>
+
+                <div class="article-tag-row">
+                  <span class="article-tag">LGU</span>
+                  <span class="article-tag">Government Tech</span>
+                  <span class="article-tag">UX</span>
+                  <span class="article-tag">Software Design</span>
+                  <span class="article-tag">Philippines</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- ARTICLE 4: Freelancing PH -->
         <div class="col-12 col-md-6">
-          <div class="article-card p-4">
+          <div class="article-card expandable p-4" data-article="4">
             <div class="d-flex justify-content-between align-items-start mb-2">
-              <span class="article-date">May 2026</span>
+              <span class="article-date">June 2026</span>
               <span class="tech-badge">Freelance</span>
             </div>
             <h5 class="article-title">How to Freelance as a Developer in the Philippines</h5>
             <p class="article-excerpt">Practical advice for Filipino devs looking to take on project-based work — from pricing your services and finding clients (students, SMEs, local businesses) to delivering quality output on time.</p>
-            <span class="coming-soon-link mt-3"><i class="bi bi-clock me-1"></i>Coming Soon</span>
+            <button class="article-toggle-btn" aria-expanded="false">
+              Read Article <i class="toggle-icon bi bi-chevron-down"></i>
+            </button>
+            <div class="article-body">
+              <hr class="article-body-divider"/>
+              <div class="article-content">
+                <h3>Freelancing here is different</h3>
+                <p>A lot of freelance dev advice online is written for Western markets — USD rates, Upwork, contract law in the US. That context doesn't fully translate to the Philippines, especially if your clients are local: students, small businesses, barangay offices, or family-owned shops.</p>
+                <p>This is what I've learned from taking on project-based work locally.</p>
+
+                <h3>Finding your first clients</h3>
+                <p>Your first clients almost always come from people who already know you — classmates, family contacts, former coworkers. Don't wait until you have a polished portfolio. Tell people what you do. Offer to build something simple for a fair price. Deliver it. That first project becomes your portfolio.</p>
+                <ul>
+                  <li>Students needing thesis systems are a consistent market. Rates are lower, but the scope is manageable and the referral network is real.</li>
+                  <li>Small local businesses often need inventory systems, basic websites, or booking forms — problems you can solve in a weekend.</li>
+                  <li>Facebook groups for local tech freelancers are underrated. Post your work, engage with posts, and people will reach out.</li>
+                </ul>
+
+                <h3>How to price your services</h3>
+                <p>Pricing is the hardest part. Charge too low and clients won't respect the work — or your time. Charge too high without proof of quality and you won't get hired.</p>
+                <p>My approach: price based on the problem being solved, not the hours you'll spend. A simple inventory system that saves a store owner two hours a day is worth more than your hourly rate times the build time. Anchor the price to the value, then negotiate from there.</p>
+                <p>For students, a thesis system typically runs ₱3,000–₱8,000 depending on complexity. For small business systems, ₱8,000–₱25,000 is realistic. Web presence work (landing pages, basic sites) falls in the ₱3,000–₱10,000 range locally.</p>
+
+                <h3>Delivering quality output on time</h3>
+                <ul>
+                  <li>Set a clear scope in writing before you start. Even a short message thread summarizing what's included protects both sides.</li>
+                  <li>Break big projects into milestones with partial payment at each stage. This keeps the project moving and reduces risk for you.</li>
+                  <li>Under-promise, over-deliver. If you think it'll take two weeks, say three. Finish early. That reputation compounds.</li>
+                  <li>Document what you built. Even a simple README or user guide makes handover smoother and makes you look professional.</li>
+                </ul>
+
+                <h3>The mindset shift</h3>
+                <p>Freelancing isn't just coding — it's client management, expectation-setting, and communication. Technical skill gets you hired once. How you handle the project is what gets you rehired and referred.</p>
+                <p>Start small, deliver well, and let the work speak.</p>
+
+                <div class="article-tag-row">
+                  <span class="article-tag">Freelance</span>
+                  <span class="article-tag">Philippines</span>
+                  <span class="article-tag">Pricing</span>
+                  <span class="article-tag">Client Work</span>
+                  <span class="article-tag">Career</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -239,6 +396,18 @@
           <div class="contact-modal-icon mb-3"><i class="bi bi-chat-dots-fill"></i></div>
           <h5 class="resume-modal-title text-center mb-1">Let's Work Together</h5>
           <p class="resume-modal-subtitle text-center mb-4">Fill out the form below and I'll get back to you as soon as possible.</p>
+          <div class="contact-channel-row mb-3">
+            <a href="viber://chat?number=%2B639519734432" target="_blank" rel="noopener noreferrer" class="contact-channel-btn contact-channel-viber">
+              <i class="bi bi-telephone-fill"></i><span>Viber</span>
+            </a>
+            <a href="https://m.me/janmar.albis.2025" target="_blank" rel="noopener noreferrer" class="contact-channel-btn contact-channel-messenger">
+              <i class="bi bi-messenger"></i><span>Messenger</span>
+            </a>
+            <a href="mailto:janmaralbis28@gmail.com" class="contact-channel-btn contact-channel-email">
+              <i class="bi bi-envelope-fill"></i><span>Email</span>
+            </a>
+          </div>
+          <p class="contact-channel-divider">or fill out the form</p>
           <div id="contactAlert" class="contact-alert d-none" role="alert"></div>
           <div id="contactFormWrap">
             <div class="mb-3">
@@ -274,6 +443,16 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- ======================== FLOATING CHAT BUTTONS ======================== -->
+  <div class="fab-chat-group">
+    <a href="viber://chat?number=%2B639519734432" target="_blank" rel="noopener noreferrer" class="fab-btn fab-viber" data-label="Viber" aria-label="Message on Viber">
+      <i class="bi bi-telephone-fill"></i>
+    </a>
+    <a href="https://m.me/janmar.albis.2025" target="_blank" rel="noopener noreferrer" class="fab-btn fab-messenger" data-label="Messenger" aria-label="Message on Messenger">
+      <i class="bi bi-messenger"></i>
+    </a>
   </div>
 
   <!-- EmailJS -->
