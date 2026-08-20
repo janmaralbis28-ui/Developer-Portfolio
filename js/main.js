@@ -8,6 +8,19 @@ if ('scrollRestoration' in history) {
 }
 window.scrollTo(0, 0);
 
+// ---- reCAPTCHA explicit render (called by Google's API after load) ----
+let recaptchaWidgetId = null;
+function onRecaptchaLoad() {
+  const container = document.getElementById('recaptcha-widget');
+  if (!container || recaptchaWidgetId !== null) return;
+  const theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  recaptchaWidgetId = grecaptcha.render('recaptcha-widget', {
+    sitekey: '6LetDDEtAAAAAOgDAGKyZ6SYQvM7HPDm_5_XbnCB',
+    theme: theme
+  });
+}
+window.onRecaptchaLoad = onRecaptchaLoad;
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ---- Hero Typewriter ---- */
@@ -59,9 +72,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateThemeIcon(theme) {
     const cls = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
-    if (themeIcon)      themeIcon.className = cls;
+    if (themeIcon)       themeIcon.className = cls;
     if (mobileThemeIcon) mobileThemeIcon.className = cls;
-    if (mobileNavIcon)  mobileNavIcon.className = cls;
+    if (mobileNavIcon)   mobileNavIcon.className = cls;
   }
 
   function toggleTheme() {
@@ -126,15 +139,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* ---- Contact Form ---- */
+  /* ---- Contact Form + reCAPTCHA ---- */
   const SERVICE_ID  = 'service_f9pxjun';
   const TEMPLATE_ID = 'template_ifka6pi';
   const PUBLIC_KEY  = 'ZV9IifKMEpsZRelNP';
   emailjs.init({ publicKey: PUBLIC_KEY });
 
-  const contactModal = document.getElementById('contactModal');
-  if (contactModal) {
-    contactModal.addEventListener('hidden.bs.modal', () => {
+  // Render reCAPTCHA when modal opens (fixes modal timing issue)
+  const contactModalEl = document.getElementById('contactModal');
+  if (contactModalEl) {
+    contactModalEl.addEventListener('shown.bs.modal', () => {
+      const container = document.getElementById('recaptcha-widget');
+      if (!container) return;
+      if (typeof grecaptcha === 'undefined') return;
+
+      if (recaptchaWidgetId === null) {
+        // First open — render it
+        const theme = html.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+        recaptchaWidgetId = grecaptcha.render('recaptcha-widget', {
+          sitekey: '6LetDDEtAAAAAOgDAGKyZ6SYQvM7HPDm_5_XbnCB',
+          theme: theme
+        });
+      } else {
+        // Already rendered — just reset
+        grecaptcha.reset(recaptchaWidgetId);
+      }
+    });
+
+    // Reset form when modal closes
+    contactModalEl.addEventListener('hidden.bs.modal', () => {
       ['contactName','contactEmail','contactSubject','contactMessage'].forEach(id => {
         const el = document.getElementById(id);
         if (el) { el.value = ''; el.classList.remove('is-invalid'); }
@@ -160,12 +193,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const messageEl = document.getElementById('contactMessage');
     const alertEl   = document.getElementById('contactAlert');
 
+    // Clear previous errors
     [nameEl, emailEl, subjectEl, messageEl].forEach(el => el.classList.remove('is-invalid'));
     ['errName','errEmail','errSubject','errMessage'].forEach(id => {
       document.getElementById(id).textContent = '';
     });
     alertEl.className = 'contact-alert d-none';
 
+    // Validate fields
     let valid = true;
     if (!nameEl.value.trim()) {
       nameEl.classList.add('is-invalid');
@@ -190,6 +225,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (!valid) return;
 
+    // Check reCAPTCHA
+    const recaptchaResponse = (typeof grecaptcha !== 'undefined' && recaptchaWidgetId !== null)
+      ? grecaptcha.getResponse(recaptchaWidgetId)
+      : '';
+
+    if (!recaptchaResponse) {
+      alertEl.className = 'contact-alert alert-danger';
+      alertEl.textContent = 'Please complete the reCAPTCHA verification.';
+      alertEl.classList.remove('d-none');
+      return;
+    }
+
+    // Show loading state
     const btn = document.getElementById('contactSubmitBtn');
     btn.disabled = true;
     document.getElementById('contactBtnText').classList.add('d-none');
@@ -197,23 +245,70 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, {
-        from_name:  nameEl.value.trim(),
-        from_email: emailEl.value.trim(),
-        subject:    subjectEl.value.trim(),
-        message:    messageEl.value.trim(),
-        to_name:    'Janmar',
+        from_name:            nameEl.value.trim(),
+        from_email:           emailEl.value.trim(),
+        subject:              subjectEl.value.trim(),
+        message:              messageEl.value.trim(),
+        to_name:              'Janmar',
+        'g-recaptcha-response': recaptchaResponse,
       });
       document.getElementById('contactFormWrap').classList.add('d-none');
       document.getElementById('contactSuccess').classList.remove('d-none');
     } catch (err) {
-      console.error('EmailJS error:', err);
+      console.error('EmailJS error status:', err.status);
+      console.error('EmailJS error text:', err.text);
+      console.error('EmailJS full error:', JSON.stringify(err));
       alertEl.className = 'contact-alert alert-danger';
       alertEl.textContent = 'Something went wrong. Please try again or email me directly.';
       alertEl.classList.remove('d-none');
       btn.disabled = false;
       document.getElementById('contactBtnText').classList.remove('d-none');
       document.getElementById('contactBtnLoading').classList.add('d-none');
+      if (typeof grecaptcha !== 'undefined' && recaptchaWidgetId !== null) {
+        grecaptcha.reset(recaptchaWidgetId);
+      }
     }
+  });
+
+  /* ---- Expandable Article Cards ---- */
+  document.querySelectorAll('.article-card.expandable').forEach(card => {
+    const toggleBtn = card.querySelector('.article-toggle-btn');
+    const body      = card.querySelector('.article-body');
+    if (!toggleBtn || !body) return;
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = body.classList.contains('open');
+
+      if (isOpen) {
+        body.classList.remove('open');
+        toggleBtn.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        toggleBtn.innerHTML = 'Read Article <i class="toggle-icon bi bi-chevron-down"></i>';
+        card.classList.remove('open');
+        card.closest('.col-12').className = 'col-12 col-md-6';
+      } else {
+        document.querySelectorAll('.article-card.expandable.open').forEach(openCard => {
+          const ob     = openCard.querySelector('.article-body');
+          const ob_btn = openCard.querySelector('.article-toggle-btn');
+          ob?.classList.remove('open');
+          ob_btn?.classList.remove('open');
+          ob_btn?.setAttribute('aria-expanded', 'false');
+          if (ob_btn) ob_btn.innerHTML = 'Read Article <i class="toggle-icon bi bi-chevron-down"></i>';
+          openCard.classList.remove('open');
+          openCard.closest('.col-12').className = 'col-12 col-md-6';
+        });
+        body.classList.add('open');
+        toggleBtn.classList.add('open');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        toggleBtn.innerHTML = 'Close Article <i class="toggle-icon bi bi-chevron-down"></i>';
+        card.classList.add('open');
+        card.closest('.col-12').className = 'col-12';
+        setTimeout(() => {
+          card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 80);
+      }
+    });
   });
 
   /* ---- Scroll Fade In ---- */
