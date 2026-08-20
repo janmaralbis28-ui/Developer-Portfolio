@@ -7,15 +7,20 @@ A responsive developer portfolio website built with HTML, CSS, and vanilla JavaS
 ```
 Developer-Portfolio-/
 ├── index.html              # Home page (Hero, Projects, Experience)
+├── 404.html                # Custom not-found page
+├── robots.txt              # Search engine crawl rules
+├── sitemap.xml             # Sitemap for search engines
+├── netlify.toml            # Security headers + redirect rules (Netlify)
 ├── css/
 │   └── style.css           # Custom styles + CSS variables (dark/light theme)
 ├── js/
-│   └── main.js             # Theme toggle, mobile menu, chicken animation, scroll effects
+│   └── main.js             # Theme toggle, mobile menu, contact form, scroll effects
 ├── assets/
 │   └── images/             # Profile photos and project screenshots
 ├── pages/
 │   ├── about.html          # About page with skills, bio, and map
 │   ├── projects.html       # Full projects grid
+│   ├── services.html       # Services, pricing, and FAQ
 │   └── articles.html       # Blog articles listing
 └── README.md
 ```
@@ -25,7 +30,6 @@ Developer-Portfolio-/
 - **Dark / Light theme toggle** (persisted via localStorage)
 - **Fully responsive** — mobile, tablet, desktop layouts
 - **Animated hero section** with floating portrait
-- **Walking chicken easter egg** — walks along the hero subtitle, kicks and glitches the text
 - **Scroll-triggered fade-in** for cards and sections
 - **Sticky navbar** with scroll shadow
 - **Mobile slide-out menu** with overlay
@@ -33,8 +37,11 @@ Developer-Portfolio-/
 - **Experience timeline** on home page
 - **Skills card grid** on About page
 - **About page slideshow** portrait with auto-transition
+- **Interactive location map** (OpenStreetMap embed) on About page
 - **Resume modal** with email + Facebook contact options
-- **Articles listing** page
+- **Contact form** with EmailJS + reCAPTCHA verification
+- **Services page** with pricing cards, 3D hardware showcase, and FAQ accordion
+- **Articles listing** page with expandable article cards
 
 ## 🛠️ Tech Stack
 
