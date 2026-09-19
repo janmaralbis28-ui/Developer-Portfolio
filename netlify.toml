@@ -30,5 +30,11 @@
     # Permissions Policy — disable features you don't need
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
 
+    # Isolate browsing context from cross-origin windows (allows popups like OAuth/reCAPTCHA to still work)
+    Cross-Origin-Opener-Policy = "same-origin-allow-popups"
+
+    # Restrict which origins can read this site's resources
+    Cross-Origin-Resource-Policy = "same-origin"
+
     # Content Security Policy — only allow scripts/styles from trusted sources
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data: https://www.google-analytics.com https://github-readme-stats.vercel.app https://www.gstatic.com; connect-src 'self' https://api.emailjs.com https://www.google-analytics.com https://region1.google-analytics.com https://www.google.com https://www.gstatic.com https://cdn.jsdelivr.net; frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/ https://www.openstreetmap.org/; object-src 'none'; base-uri 'self';"
